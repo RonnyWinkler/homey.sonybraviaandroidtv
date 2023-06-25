@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Playing content",
+    "nl": "Inhoud afspelen"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": null
+}

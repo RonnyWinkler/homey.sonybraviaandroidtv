@@ -1,0 +1,29 @@
+{
+    "title": { 
+        "en": "Start app",
+        "nl": "App starten"
+    },
+    "titleFormatted": { 
+        "en": "Start app [[app]]",
+        "nl": "App [[app]] starten"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "type": "autocomplete",
+            "name": "app",
+            "title": { 
+                "en": "app",
+                "nl": "app"
+            },
+            "placeholder": { 
+                "en": "Select an app",
+                "nl": "Selecteer een app"
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "title": {
+        "en": "Input changed",
+        "nl": "Invoer veranderd"
+    },
+    "tokens": [
+        {
+            "name": "input",
+            "type": "string",
+            "title": {
+                "en": "Input",
+                "nl": "Invoer"
+            },
+            "example": "extInput:hdmi?port=1"
+        },
+
+        {
+            "name": "input_text",
+            "type": "string",
+            "title": {
+                "en": "Input name",
+                "nl": "Invoer naam"
+            },
+            "example": "HDMI 1"
+        }
+    ],
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=sony-bravia-android-tv"
+    }]
+}

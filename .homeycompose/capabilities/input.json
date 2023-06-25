@@ -1,0 +1,40 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Input",
+    "nl": "Invoer"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "tv:dvbs",
+      "title": "TV DVB-S"
+    },
+    {
+      "id": "tv:dvbc",
+      "title": "TV DVB-C"
+    },
+    {
+      "id": "tv:dvbt",
+      "title": "TV DVB-T"
+    },
+    {
+      "id": "extInput:hdmi?port=1",
+      "title": "HDMI 1"
+    },
+    {
+      "id": "extInput:hdmi?port=2",
+      "title": "HDMI 2"
+    },
+    {
+      "id": "extInput:hdmi?port=3",
+      "title": "HDMI 3"
+    },
+    {
+      "id": "extInput:hdmi?port=4",
+      "title": "HDMI 4"
+    }
+  ]
+}
