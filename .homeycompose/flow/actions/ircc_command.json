@@ -1,0 +1,29 @@
+{
+    "title": { 
+        "en": "Send remote control command",
+        "nl": "Stuur commando afstandsbediening"
+    },
+    "titleFormatted": { 
+        "en": "Send remote control command [[ircc]]",
+        "nl": "Stuur commando afstandsbediening [[ircc]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "type": "autocomplete",
+            "name": "ircc",
+            "title": { 
+                "en": "RC command",
+                "nl": "RC-commando"
+            },
+            "placeholder": { 
+                "en": "Select an RC command",
+                "nl": "Selecteer een RC-commando"
+            }
+        }
+    ]
+}

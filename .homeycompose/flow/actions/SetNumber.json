@@ -1,0 +1,94 @@
+{
+    "deprecated": true,
+    "title": {
+      "en": "Numpad input",
+      "nl": "Numerieke invoer"
+    },
+    "titleFormatted": {
+      "en": "Numpad input as [[Number]]",
+      "nl": "Numerieke invoer als [[Number]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "name": "Number",
+            "type": "dropdown",
+            "values": [
+            {
+                "id": "Num1",
+                "label": {
+                "en": "Numpad 1",
+                "nl": "Nummer 1"
+                }
+            },
+            {
+                "id": "Num2",
+                "label": {
+                "en": "Numpad 2",
+                "nl": "Nummer 2"
+                }
+            },
+            {
+                "id": "Num3",
+                "label": {
+                "en": "Numpad 3",
+                "nl": "Nummer 3"
+                }
+            },
+            {
+                "id": "Num4",
+                "label": {
+                "en": "Numpad 4",
+                "nl": "Nummer 4"
+                }
+            },
+            {
+                "id": "Num5",
+                "label": {
+                "en": "Numpad 5",
+                "nl": "Nummer 5"
+                }
+            },
+            {
+                "id": "Num6",
+                "label": {
+                "en": "Numpad 6",
+                "nl": "Nummer 6"
+                }
+            },
+            {
+                "id": "Num7",
+                "label": {
+                "en": "Numpad 7",
+                "nl": "Nummer 7"
+                }
+            },
+            {
+                "id": "Num8",
+                "label": {
+                "en": "Numpad 8",
+                "nl": "Nummer 8"
+                }
+            },
+            {
+                "id": "Num9",
+                "label": {
+                "en": "Numpad 9",
+                "nl": "Nummer 9"
+                }
+            },
+            {
+                "id": "Num0",
+                "label": {
+                "en": "Numpad 0",
+                "nl": "Nummer 0"
+                }
+            }
+            ]
+        }
+    ]
+}
