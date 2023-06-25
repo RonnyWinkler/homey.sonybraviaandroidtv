@@ -1,0 +1,84 @@
+{
+    "title": {
+        "en": "Playing content changed",
+        "nl": "Inhoud afspelen veranderd"
+    },
+    "tokens": [
+        {
+            "name": "uri",
+            "type": "string",
+            "title": {
+                "en": "uri",
+                "nl": "uri"
+            },
+            "example": "extInput:hdmi?port=1"
+        },
+        {
+            "name": "source",
+            "type": "string",
+            "title": {
+                "en": "Source",
+                "nl": "Bron"
+            },
+            "example": "extInput:hdmi"
+        },
+        {
+            "name": "title",
+            "type": "string",
+            "title": {
+                "en": "Title",
+                "nl": "Titel"
+            },
+            "example": "HDMI 3 (eARC/ARC)"
+        },
+        {
+            "name": "disp_num",
+            "type": "string",
+            "title": {
+                "en": "Program number",
+                "nl": "Programma nummer"
+            },
+            "example": "0001"
+        },
+        {
+            "name": "triplet_str",
+            "type": "string",
+            "title": {
+                "en": "Triplet",
+                "nl": "Triplet"
+            },
+            "example": "0001"
+        },
+        {
+            "name": "program_title",
+            "type": "string",
+            "title": {
+                "en": "Program title",
+                "nl": "Programma titel"
+            }
+        },
+        {
+            "name": "start_date_time",
+            "type": "string",
+            "title": {
+                "en": "Start date & time",
+                "nl": "Startdatum & -tijd"
+            },
+            "example": "2023-06-22T20:00:00+0200"
+        },
+        {
+            "name": "duration",
+            "type": "number",
+            "title": {
+                "en": "Duration",
+                "nl": "Duur"
+            },
+            "example": "900"
+        }
+    ],
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=sony-bravia-android-tv"
+    }]
+}

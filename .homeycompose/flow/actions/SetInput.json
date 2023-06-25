@@ -1,0 +1,48 @@
+{
+    "deprecated": true,
+    "title": {
+      "en": "Set HDMI input",
+      "nl": "Selecteer HDMI ingang"
+    },
+    "titleFormatted": {
+      "en": "Set HDMI input to [[Input]]",
+      "nl": "Selecteer HDMI ingang naar [[Input]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "name": "Input",
+            "type": "dropdown",
+            "values": [
+            {
+                "id": "Hdmi1",
+                "label": {
+                "en": "HDMI 1"
+                }
+            },
+            {
+                "id": "Hdmi2",
+                "label": {
+                "en": "HDMI 2"
+                }
+            },
+            {
+                "id": "Hdmi3",
+                "label": {
+                "en": "HDMI 3"
+                }
+            },
+            {
+                "id": "Hdmi4",
+                "label": {
+                "en": "HDMI 4"
+                }
+            }
+            ]
+        }
+    ]
+}
