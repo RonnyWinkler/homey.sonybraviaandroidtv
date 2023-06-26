@@ -62,7 +62,34 @@
                     }
                 }
             ]
-        },    
+        },
+        {
+          "id": "polling_off_active",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Different polling when TV is switched off",
+            "nl": "Verschillende polling als de tv uit staat"
+          },
+          "hint": {
+            "en": "You can set a differnent polling interval when the TV is off.",
+            "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld."
+          }
+        },
+        {
+          "id": "polling_off",
+          "type": "number",
+          "label": {
+            "en": "Polling interval in minutes when TV is off",
+            "nl": "Polling-interval in minuten wanneer de tv is uitgeschakeld"
+          },
+          "value": 5,
+          "min": 1,
+          "hint": {
+            "en": "You can set a differnent polling interval when the TV is off. Use interval >2min to allow the TV go to deep sleep if 'Powered on by apps' is noc activated.",
+            "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld. Gebruik interval >2 min om de tv in diepe slaapstand te laten gaan als 'Powered on by apps' niet is geactiveerd."
+          }
+        },
         {
           "id": "macAddress",
           "type": "text",

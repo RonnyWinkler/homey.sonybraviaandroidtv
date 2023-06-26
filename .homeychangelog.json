@@ -30,5 +30,13 @@
   "2.0.5": {
     "en": "Added 'mute activated/deactivated' trigger.",
     "de": "Trigger für 'Stummschaltung aktiviert/deaktiviert' ergänzt."
+  },
+  "2.0.6": {
+    "en": "Added second poll intervall (TV off). Added WoL (wake on LAN) flow action.",
+    "de": "Zweites Abrufintervall (TV aus) ergänzt. WoL (wake on LAN) Flow-Aktion ergänzt."
+  },
+  "2.0.7": {
+    "en": "Added device availability check to WoL flow action.",
+    "de": "Geräteverfügbarkeits-Prüfung für WoL Flow-Aktion ergänzt."
   }
 }

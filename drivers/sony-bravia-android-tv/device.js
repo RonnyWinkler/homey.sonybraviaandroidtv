@@ -11,7 +11,7 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
 
     this._setCapabilityListeners();
     this._setFlowTrigger();
-    this._checkDeviceInterval(this.data.settings.polling, this.data.settings.polling_unit);
+    this._checkDeviceInterval();
   }
 
   async _checkCapabilities(){
@@ -41,12 +41,17 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
    * @param {string[]} event.changedKeys An array of keys changed since the previous version
    * @returns {Promise<string|void>} return a custom message that will be displayed
    */
-    async onSettings({ oldSettings, newSettings, changedKeys }) {
-      this.log(`[Device] ${this.getName()}: ${this.getData().id} settings where changed: ${changedKeys}`);
-      this.data.settings = newSettings;
-      this._clearIntervals();
-      this._checkDeviceInterval(newSettings.polling, newSettings.polling_unit);
-    }
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log(`[Device] ${this.getName()}: ${this.getData().id} settings where changed: ${changedKeys}`);
+    this.data.settings = newSettings;
+    this._clearIntervals();
+    this._checkDeviceInterval({
+      interval: newSettings.polling, 
+      unit: newSettings.polling_unit, 
+      interval_off: newSettings.polling_off, 
+      interval_off_active: newSettings.polling_off_active
+    });
+  }
   
   _generateDeviceObject() {
     return {
@@ -90,11 +95,24 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
     this._flowTriggerPlayingContentChanged = this.homey.flow.getDeviceTriggerCard('playing_content_changed');
   }
 
-  async _checkDeviceInterval(interval=1, unit='min') {
+  async _checkDeviceInterval({
+      interval = this.data.settings.polling, 
+      unit = this.data.settings.polling_unit,
+      interval_off = this.data.settings.polling_off,
+      interval_off_active = this.data.settings.polling_off_active,
+      onoff_state = undefined } = {}) {
+
+    if (onoff_state == undefined){
+      onoff_state = this.getCapabilityValue('onoff');
+    } 
     // Interval settings is in minutes, convert to milliseconds.
     interval = interval * 1000;
     if (unit == 'min'){
       interval = interval * 60;
+    }
+    // different interval when TV is off and setting is active
+    if (!onoff_state && interval_off_active){
+      interval = interval_off * 1000 * 60;
     }
     try {
       this.log(`[Device] ${this.getName()}: onPollInterval =>`, interval);
@@ -116,10 +134,13 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
   }
 
   async checkDevice() {
+    this.log("Check device state...");
     await this._checkDeviceAvailability();
-    await this._checkDevicePowerState();
-    await this._checkDeviceVolume();
-    await this._checkPlayingContent();
+    if (this.getAvailable()){
+      await this._checkDevicePowerState();
+      await this._checkDeviceVolume();
+      await this._checkPlayingContent();
+    }
   }
 
   async _checkDeviceAvailability() {
@@ -135,6 +156,12 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
     try {
       let state = await SonyBraviaAndroidTvCommunicator.getDevicePowerState(this);
       // this.log(`[Device] ${this.getName()}: current power state: `, state);
+      let value = state === 'active' ? true : false;
+      if (value != this.getCapabilityValue('onoff')){
+        // state changed => check polling interval
+        this._clearIntervals();
+        this._checkDeviceInterval({onoff_state: value});
+      }
       return this.setCapabilityValue('onoff', state === 'active' ? true : false);
     } 
     catch (err) {

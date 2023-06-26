@@ -3,6 +3,7 @@
 const Homey = require('homey');
 const SonyBraviaAndroidTvCommunicator = require('./lib/sony-bravia-android-tv-communicator');
 const SonyBraviaFlowActions = require('./lib/flow-actions');
+const wol = require('./lib/wol');
 
 class SonyBraviaAndroidTvApp extends Homey.App {
 
@@ -114,16 +115,91 @@ class SonyBraviaAndroidTvApp extends Homey.App {
             });
         });
 
+        // APP FLOW ACTIONS =========================================================================================
+        this._flowActionWakeOnLan = this.homey.flow.getActionCard('wake_on_lan');
+        // wakeOnLanAction.registerRunListener(async (args, state) => {
+        //         return args.device.wakeOnLan();
+        // });
+        this._flowActionWakeOnLan.registerRunListener(async (args, state) => {
+                return await this._wakeOnLanAction(args, state);
+        });
+        this._flowActionWakeOnLan.registerArgumentAutocompleteListener('device', async (query, args) => {
+          let results = [];
+          let devices = this.homey.drivers.getDriver('sony-bravia-android-tv').getDevices();
+          for (let i=0; i<devices.length; i++){
+            results.push( 
+              {
+                name: devices[i].getName(),
+                id: devices[i].getData().id
+              }
+            );
+          }
+    
+          // filter based on the query
+          return results.filter((result) => {
+            return result.name.toLowerCase().includes(query.toLowerCase());
+          });
+        });
+    
+
         // FLOW CONDITIONS ===============================================================================================
-        this._flowConditionInput = this.homey.flow.getConditionCard('input')
-		.registerRunListener(async (args, state) => {
-            await args.device.checkDevice();
-			return (args.device.getCapabilityValue('input') == args.input);
-		})
+        this._flowConditionInput = this.homey.flow.getConditionCard('input').registerRunListener(async (args, state) => {
+          await args.device.checkDevice();
+          return (args.device.getCapabilityValue('input') == args.input);
+        })
 
     }
 
-    
+    async _wakeOnLanAction(args, state){
+      let devices = this.homey.drivers.getDriver('sony-bravia-android-tv').getDevices();
+      for (let i=0; i<devices.length; i++){
+        if (devices[i].getData().id == args.device.id){
+          await this._wakeOnLan(devices[i].getSettings().macAddress);
+          await this._checkDeviceAvailability(devices[i]);
+        }
+      }
+    }
+  
+    async _wakeOnLan(mac){
+      const self = this;
+      return new Promise( ( resolve, reject ) =>
+      {
+        try
+        {
+          wol.wake(mac, ( response ) =>{
+            self.log("WakeOnLan request sent.");
+            resolve(response);
+          });
+        }
+        catch ( err )
+        {
+          self.log("WakeOnLan Error:"+err.message);
+          // DiagnosticLog
+          self.writeLog("WakeOnLan Error:"+err.message);
+          reject( new Error( "WakeOnLan error: " + err.message ) );
+        }
+      });        
+    }
+
+    async _checkDeviceAvailability(device){
+      for (let i=1; i<=10; i++){
+        this.log("Check device availability #", (i));
+        await device.checkDevice();
+        if (device.getAvailable()){
+          this.log("Device is available.");
+          return true;
+        }
+        if (i<10){
+          await this.sleep(2000);
+        }
+      }
+      this.log("WoL sent, but device is still unavailable.");
+      throw new Error("WoL sent, but device is still unavailable.");
+  }
+
+    sleep(time) {
+      return new Promise(resolve => setTimeout(resolve, time));
+    } 
 }
 
 module.exports = SonyBraviaAndroidTvApp;

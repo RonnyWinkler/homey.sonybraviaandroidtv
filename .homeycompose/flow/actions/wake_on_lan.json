@@ -1,0 +1,28 @@
+{
+    "id": "wake_on_lan",
+    "highlight": true,
+    "title": {
+        "en": "Send wake-on-lan request.",
+        "de": "Sende Wake-on-LAN-Anforderung.",
+        "nl": "Wake-on-lan-verzoek verzenden."
+    },
+    "titleFormatted": {
+        "en": "Send wake-on-lan request to [[device]].",
+        "de": "Sende Wake-on-LAN-Anforderung an [[device]].",
+        "nl": "Wake-on-lan-verzoek naar [[device]] sturen."
+    },
+    "args": [
+        {
+            "type": "autocomplete",
+            "name": "device",
+            "title": { 
+                "en": "TV"
+            },
+            "placeholder": {
+                "en": "Select your TV",
+                "de": "Wähle dein TV",
+                "nl": "Selecteer je TV"
+            }
+        }
+    ]
+}
