@@ -1,0 +1,6 @@
+# Homey exclude
+
+node_modules/
+env.json
+
+/.homeybuild/

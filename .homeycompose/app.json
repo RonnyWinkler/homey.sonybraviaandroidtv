@@ -1,0 +1,51 @@
+{
+  "id": "name.ricardoismy.sonybraviaandroidtv",
+  "version": "2.0.5",
+  "compatibility": ">=8.1.0",
+  "sdk": 3,
+  "name": {
+    "en": "Sony BRAVIA Android TV"
+  },
+  "description": {
+    "en": "Made to Entertain"
+  },
+  "brandColor": "#000000",
+  "category": ["video"],
+  "tags": {
+    "en": [
+      "sony",
+      "android",
+      "android tv",
+      "bravia"
+    ]
+  },
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "homeyCommunityTopicId": 82523,
+  "source": "https://github.com/RonnyWinkler/homey.sonybraviaandroidtv",
+  "bugs": {
+    "url": "https://github.com/RonnyWinkler/homey.sonybraviaandroidtv/issues"
+  },
+  "author": {
+    "name": "Ronny Winkler",
+    "email": "ronny.winkler@web.de"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Ricardo Snoek (Homey app initial version)",
+        "email": "me@ricardoismy.name"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "winklerronny"
+      }
+    }
+  }
+}

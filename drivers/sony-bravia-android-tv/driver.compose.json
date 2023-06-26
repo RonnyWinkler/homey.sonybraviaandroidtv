@@ -1,0 +1,49 @@
+{
+  "name": {
+    "en": "Sony BRAVIA Android TV"
+  },
+  "images": {
+    "large": "drivers/sony-bravia-android-tv/assets/images/large.png",
+    "small": "drivers/sony-bravia-android-tv/assets/images/small.png"
+  },
+  "class": "tv",
+  "capabilities": [
+    "onoff",
+    "channel_up",
+    "channel_down",
+    "volume_up",
+    "volume_down",
+    "volume_mute",
+    "volume_set",
+    "input",
+    "playing_content"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "preshared_key"
+      }
+    },
+    {
+      "id": "preshared_key"
+    },
+    {
+      "id": "instructions"
+    },
+    {
+      "id": "not_found"
+    },
+    {
+      "id": "manual_input"
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

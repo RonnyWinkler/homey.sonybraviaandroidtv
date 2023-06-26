@@ -1,0 +1,11 @@
+{
+    "title": {
+        "en": "Volume mute has been deactivated",
+        "nl": "Volume dempen is gedeactiveerd"
+    },
+    "args": [{
+        "name": "device",
+        "type": "device",
+        "filter": "driver_id=sony-bravia-android-tv"
+    }]
+}

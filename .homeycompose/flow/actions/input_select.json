@@ -1,0 +1,29 @@
+{
+    "title": { 
+        "en": "Select input",
+        "nl": "Selecteer invoer"
+    },
+    "titleFormatted": { 
+        "en": "Select input [[input]]",
+        "nl": "Selecteer invoer [[input]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "type": "autocomplete",
+            "name": "input",
+            "title": { 
+                "en": "input",
+                "nl": "invoer"
+            },
+            "placeholder": { 
+                "en": "Select an input",
+                "nl": "Selecteer een invoer"
+            }
+        }
+    ]
+}

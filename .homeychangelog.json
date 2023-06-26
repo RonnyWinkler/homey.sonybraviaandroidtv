@@ -1,0 +1,34 @@
+{
+  "1.1.0": {
+    "en": "Updating to app SDK 3.0",
+    "de": "Aktualisiert auf SDK 3.0"
+  },
+  "1.1.1": {
+    "en": "Bugfix for crash on HomeyPro23",
+    "de": "Korrektur für Crash auf HomeyPro23"
+  },
+  "2.0.0": {
+    "en": "New: volume slider, input mode, flow actions for app start, input selection and IR codes.",
+    "de": "Neu: Lautstärke-Steuerung, Input-Liste, Flow-Aktionen für App-Start, Input-Selektion und IR-Codes."
+  },
+  "2.0.1": {
+    "en": "Testversion for pair view check.",
+    "de": "Testversion zur Prüfung des Pair-Dialogs."
+  },
+  "2.0.2": {
+    "en": "Testversion for pair view check.",
+    "de": "Testversion zur Prüfung des Pair-Dialogs."
+  },
+  "2.0.3": {
+    "en": "Testversion for pair view check.",
+    "de": "Testversion zur Prüfung des Pair-Dialogs."
+  },
+  "2.0.4": {
+    "en": "Fix for device deletion (stop polling).",
+    "de": "Korrektur für Löschen von Geräten (Abruf stoppen)."
+  },
+  "2.0.5": {
+    "en": "Added 'mute activated/deactivated' trigger.",
+    "de": "Trigger für 'Stummschaltung aktiviert/deaktiviert' ergänzt."
+  }
+}

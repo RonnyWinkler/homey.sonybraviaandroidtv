@@ -1,0 +1,14 @@
+{
+    "deprecated": true,
+    "title": {
+      "en": "Open Electronic Program Guide",
+      "nl": "Elektronische Programma Gids openen"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        }
+    ]
+}
