@@ -17,8 +17,8 @@
             "type": "autocomplete",
             "name": "input",
             "title": { 
-                "en": "input",
-                "nl": "invoer"
+                "en": "Input",
+                "nl": "Invoer"
             },
             "placeholder": { 
                 "en": "Select an input",

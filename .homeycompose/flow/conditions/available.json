@@ -1,0 +1,13 @@
+{
+    "title": {
+        "en": "TV !{{is|isn't}} available",
+        "de": "TV !{{ist|ist nicht}} verfügbar",
+        "nl": "TV !{{is|is niet}} beschikbaar"
+    },
+    "args": [{
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        }
+    ]
+}

@@ -97,6 +97,40 @@ class SonyBraviaAndroidTvApp extends Homey.App {
             });
         });
 
+        this._flowActionSelectTvChannel = this.homey.flow.getActionCard('tv_channel_select')
+        this._flowActionSelectTvChannel.registerRunListener(async (args, state) => {
+          try{
+            await SonyBraviaAndroidTvCommunicator.selectInput(args.device, args.channel.uri );
+            return true;
+          }
+          catch(error){
+            this.error("Error executing flowAction 'input_tv_channel': "+  error.message);
+            throw new Error(error.message);
+          }
+        });
+        this._flowActionSelectTvChannel.registerArgumentAutocompleteListener('source', async (query, args) => {
+          this._autocompleteTvSourceList = await args.device.getAutocompleteTvSourceList();
+          return this._autocompleteTvSourceList.filter((result) => { 
+              return result.name.toLowerCase().includes(query.toLowerCase());
+          });
+        });
+        this._flowActionSelectTvChannel.registerArgumentAutocompleteListener('channel', async (query, args) => {
+          try{
+            if (args && args.source && args.source.uri){
+              this._autocompleteTvChannelList = await args.device.getAutocompleteTvChannelList(args.source.uri);
+              return this._autocompleteTvChannelList.filter((result) => { 
+                return result.name.toLowerCase().includes(query.toLowerCase());
+              });
+            }
+            else{
+              return [];
+            }
+          }
+          catch{
+            return [];
+          }
+        });
+
         this._flowActionIrccCommand = this.homey.flow.getActionCard('ircc_command')
         this._flowActionIrccCommand.registerRunListener(async (args, state) => {
           try{
@@ -148,19 +182,24 @@ class SonyBraviaAndroidTvApp extends Homey.App {
           return (args.device.getCapabilityValue('input') == args.input);
         })
 
+        this._flowConditionAvailable = this.homey.flow.getConditionCard('available').registerRunListener(async (args, state) => {
+          await args.device.checkDevice();
+          return (args.device.getAvailable());
+        })
+
     }
 
     async _wakeOnLanAction(args, state){
       let devices = this.homey.drivers.getDriver('sony-bravia-android-tv').getDevices();
       for (let i=0; i<devices.length; i++){
         if (devices[i].getData().id == args.device.id){
-          await this._wakeOnLan(devices[i].getSettings().macAddress);
-          await this._checkDeviceAvailability(devices[i]);
+          await this.wakeOnLan(devices[i].getSettings().macAddress);
+          await this.checkDeviceAvailability(devices[i]);
         }
       }
     }
   
-    async _wakeOnLan(mac){
+    async wakeOnLan(mac){
       const self = this;
       return new Promise( ( resolve, reject ) =>
       {
@@ -181,7 +220,7 @@ class SonyBraviaAndroidTvApp extends Homey.App {
       });        
     }
 
-    async _checkDeviceAvailability(device){
+    async checkDeviceAvailability(device){
       for (let i=1; i<=10; i++){
         this.log("Check device availability #", (i));
         await device.checkDevice();

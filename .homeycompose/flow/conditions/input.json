@@ -27,32 +27,48 @@
             "values": [
                 {
                     "id": "tv:dvbs",
-                    "title": "TV DVB-S"
+                    "title": "TV:DVBS"
+                  },
+                  {
+                    "id": "tv:dvbc",
+                    "title": "TV:DVBC"
+                  },
+                  {
+                    "id": "tv:dvbt",
+                    "title": "TV:DVBT"
+                  },
+                              {
+                    "id": "extInput:hdmi?port=1",
+                    "title": "HDMI 1"
                 },
                 {
-                "id": "tv:dvbc",
-                "title": "TV DVB-C"
+                    "id": "extInput:hdmi?port=2",
+                    "title": "HDMI 2"
                 },
                 {
-                "id": "tv:dvbt",
-                "title": "TV DVB-T"
+                    "id": "extInput:hdmi?port=3",
+                    "title": "HDMI 3"
                 },
                 {
-                "id": "extInput:hdmi?port=1",
-                "title": "HDMI 1"
+                    "id": "extInput:hdmi?port=4",
+                    "title": "HDMI 4"
                 },
                 {
-                "id": "extInput:hdmi?port=2",
-                "title": "HDMI 2"
+                    "id": "extInput:composite?port=1",
+                    "title": "AV 1"
                 },
                 {
-                "id": "extInput:hdmi?port=3",
-                "title": "HDMI 3"
+                    "id": "extInput:composite?port=2",
+                    "title": "AV 2"
                 },
                 {
-                "id": "extInput:hdmi?port=4",
-                "title": "HDMI 4"
-                }
+                    "id": "extInput:composite?port=3",
+                    "title": "AV 3"
+                },
+                {
+                    "id": "extInput:composite?port=4",
+                    "title": "AV 4"
+                }            
             ]
         }
     ]

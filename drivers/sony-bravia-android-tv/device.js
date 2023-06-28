@@ -26,6 +26,13 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
     }
   }
 
+  onUninit(){
+    this._clearIntervals();
+
+    this.data = this._generateDeviceObject();
+    this.log(`${this.this.getName()} unInit().`);
+  }
+
   onDeleted() {
     this._clearIntervals();
 
@@ -80,12 +87,13 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
       this.registerCapabilityListener(capability.name, async value => {
         try {
           await capability.function(this, value);
-          this.homey.setTimeout(() => 
-            this.checkDevice(),  1000 );
-          return true;
         } catch (err) {
-          this.log(`${this.data.name} capability listener could not be executed: `, err.message);
+          this.log(`${this.data.name} capability listener ${capability.name} could not be executed: `, err.message);
+          throw new Error("Error message from TV: "+err.message);
         }
+        this.homey.setTimeout(() => 
+          this.checkDevice(),  1000 );
+        return true;
       });
     });
   }
@@ -134,7 +142,7 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
   }
 
   async checkDevice() {
-    this.log("Check device state...");
+    // this.log("Check device state...");
     await this._checkDeviceAvailability();
     if (this.getAvailable()){
       await this._checkDevicePowerState();
@@ -329,7 +337,18 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
 
   async getAutocompleteInputList(){
     let result = [];
-    let inputs = await SonyBraviaAndroidTvCommunicator.getInputs(this);
+
+    let sources = await SonyBraviaAndroidTvCommunicator.getSourcess(this, 'tv');
+    for (let i=0; i<sources.length; i++){
+      result.push(
+        {
+          name: sources[i].source.toUpperCase(),
+          uri: sources[i].source
+        }
+      );
+    }
+
+    let inputs = await SonyBraviaAndroidTvCommunicator.getCurrentExternalInputs(this);
     for (let i=0; i<inputs.length; i++){
       result.push(
         {
@@ -338,6 +357,65 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
         }
       );
     }
+
+    result.sort(function(a, b){
+      if (a.index < b.index){ 
+        return -1
+      }
+      else{
+        return 1;
+      }
+    });
+    return result;
+  }
+
+  async getAutocompleteTvSourceList(){
+    let result = [];
+
+    let sources = await SonyBraviaAndroidTvCommunicator.getSourcess(this, 'tv');
+    for (let i=0; i<sources.length; i++){
+      result.push(
+        {
+          name: sources[i].source.toUpperCase(),
+          uri: sources[i].source
+        }
+      );
+    }
+
+    result.sort(function(a, b){
+      if (a.index < b.index){ 
+        return -1
+      }
+      else{
+        return 1;
+      }
+    });
+    return result;
+  }
+
+  async getAutocompleteTvChannelList(source){
+    let result = [];
+
+    // let sources = await SonyBraviaAndroidTvCommunicator.getSourcess(this, 'tv');
+    // for (let i=0; i<sources.length; i++){
+    //   result.push(
+    //     {
+    //       name: sources[i].source.toUpperCase(),
+    //       uri: sources[i].source.toUpperCase()
+    //     }
+    //   );
+    // }
+
+    let inputs = await SonyBraviaAndroidTvCommunicator.getInputs(this, source);
+    for (let i=0; i<inputs.length; i++){
+      result.push(
+        {
+          name: inputs[i].title,
+          uri: inputs[i].uri
+        }
+      );
+    }
+
     result.sort(function(a, b){
       if (a.index < b.index){ 
         return -1

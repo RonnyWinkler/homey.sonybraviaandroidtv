@@ -1,0 +1,41 @@
+{
+    "title": { 
+        "en": "Select TV channel",
+        "nl": "Selecteer TV-zender"
+    },
+    "titleFormatted": { 
+        "en": "Select TV source [[source]] and channel [[channel]]",
+        "nl": "Selecteer TV-zbron [[source]] en ender [[channel]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "type": "autocomplete",
+            "name": "source",
+            "title": { 
+                "en": "TV source",
+                "nl": "TV-bron"
+            },
+            "placeholder": { 
+                "en": "Select a TV source",
+                "nl": "Selecteer een TV-bron"
+            }
+        },
+        {
+            "type": "autocomplete",
+            "name": "channel",
+            "title": { 
+                "en": "TV channel",
+                "nl": "TV-source"
+            },
+            "placeholder": { 
+                "en": "Select a TV channel",
+                "nl": "Selecteer een TV-zender"
+            }
+        }
+    ]
+}

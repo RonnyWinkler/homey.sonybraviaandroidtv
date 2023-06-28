@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "name.ricardoismy.sonybraviaandroidtv",
-  "version": "2.0.7",
+  "version": "2.0.9",
   "compatibility": ">=8.1.0",
   "sdk": 3,
   "name": {
@@ -206,6 +206,21 @@
     "conditions": [
       {
         "title": {
+          "en": "TV !{{is|isn't}} available",
+          "de": "TV !{{ist|ist nicht}} verfügbar",
+          "nl": "TV !{{is|is niet}} beschikbaar"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          }
+        ],
+        "id": "available"
+      },
+      {
+        "title": {
           "en": "Input !{{is|isn't}}",
           "nl": "Invoer !{{is|is niet}}"
         },
@@ -233,15 +248,15 @@
             "values": [
               {
                 "id": "tv:dvbs",
-                "title": "TV DVB-S"
+                "title": "TV:DVBS"
               },
               {
                 "id": "tv:dvbc",
-                "title": "TV DVB-C"
+                "title": "TV:DVBC"
               },
               {
                 "id": "tv:dvbt",
-                "title": "TV DVB-T"
+                "title": "TV:DVBT"
               },
               {
                 "id": "extInput:hdmi?port=1",
@@ -258,6 +273,22 @@
               {
                 "id": "extInput:hdmi?port=4",
                 "title": "HDMI 4"
+              },
+              {
+                "id": "extInput:composite?port=1",
+                "title": "AV 1"
+              },
+              {
+                "id": "extInput:composite?port=2",
+                "title": "AV 2"
+              },
+              {
+                "id": "extInput:composite?port=3",
+                "title": "AV 3"
+              },
+              {
+                "id": "extInput:composite?port=4",
+                "title": "AV 4"
               }
             ]
           }
@@ -349,8 +380,8 @@
             "type": "autocomplete",
             "name": "input",
             "title": {
-              "en": "input",
-              "nl": "invoer"
+              "en": "Input",
+              "nl": "Invoer"
             },
             "placeholder": {
               "en": "Select an input",
@@ -573,6 +604,48 @@
         "id": "SetNumber"
       },
       {
+        "title": {
+          "en": "Select TV channel",
+          "nl": "Selecteer TV-zender"
+        },
+        "titleFormatted": {
+          "en": "Select TV source [[source]] and channel [[channel]]",
+          "nl": "Selecteer TV-zbron [[source]] en ender [[channel]]"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          },
+          {
+            "type": "autocomplete",
+            "name": "source",
+            "title": {
+              "en": "TV source",
+              "nl": "TV-bron"
+            },
+            "placeholder": {
+              "en": "Select a TV source",
+              "nl": "Selecteer een TV-bron"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "channel",
+            "title": {
+              "en": "TV channel",
+              "nl": "TV-source"
+            },
+            "placeholder": {
+              "en": "Select a TV channel",
+              "nl": "Selecteer een TV-zender"
+            }
+          }
+        ],
+        "id": "tv_channel_select"
+      },
+      {
         "id": "wake_on_lan",
         "highlight": true,
         "title": {
@@ -771,15 +844,15 @@
       "values": [
         {
           "id": "tv:dvbs",
-          "title": "TV DVB-S"
+          "title": "TV:DVBS"
         },
         {
           "id": "tv:dvbc",
-          "title": "TV DVB-C"
+          "title": "TV:DVBC"
         },
         {
           "id": "tv:dvbt",
-          "title": "TV DVB-T"
+          "title": "TV:DVBT"
         },
         {
           "id": "extInput:hdmi?port=1",
@@ -796,6 +869,22 @@
         {
           "id": "extInput:hdmi?port=4",
           "title": "HDMI 4"
+        },
+        {
+          "id": "extInput:composite?port=1",
+          "title": "AV 1"
+        },
+        {
+          "id": "extInput:composite?port=2",
+          "title": "AV 2"
+        },
+        {
+          "id": "extInput:composite?port=3",
+          "title": "AV 3"
+        },
+        {
+          "id": "extInput:composite?port=4",
+          "title": "AV 4"
         }
       ]
     },

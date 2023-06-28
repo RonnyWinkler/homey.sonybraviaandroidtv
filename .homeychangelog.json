@@ -38,5 +38,13 @@
   "2.0.7": {
     "en": "Added device availability check to WoL flow action.",
     "de": "Geräteverfügbarkeits-Prüfung für WoL Flow-Aktion ergänzt."
+  },
+  "2.0.8": {
+    "en": "Added TC channel flow action. Changed 'turn on' action to turn on TV from standby mode.",
+    "de": "TV-Kanal Flow-Aktion ergänzt. 'Anschalten' geändert, um den TV vom Standby anzuschalten."
+  },
+  "2.0.9": {
+    "en": "Changed 'turn on' action to use WoL if needed.",
+    "de": "'Anschalten' geändert, um WoL zu verwenden wenn erforderlich."
   }
 }
