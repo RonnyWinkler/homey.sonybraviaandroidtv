@@ -46,5 +46,9 @@
   "2.0.9": {
     "en": "Changed 'turn on' action to use WoL if needed.",
     "de": "'Anschalten' geändert, um WoL zu verwenden wenn erforderlich."
+  },
+  "2.0.10": {
+    "en": "Optimized technical updated on startup.",
+    "de": "Technische Aktualisierungen beim Start optimiert."
   }
 }

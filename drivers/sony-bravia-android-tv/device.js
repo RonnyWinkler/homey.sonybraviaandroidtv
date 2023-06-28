@@ -16,13 +16,13 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
 
   async _checkCapabilities(){
     if (!this.hasCapability("volume_set")){
-      this.addCapability("volume_set");
+      await this.addCapability("volume_set");
     }
     if (!this.hasCapability("input")){
-      this.addCapability("input");
+      await this.addCapability("input");
     }
     if (!this.hasCapability("playing_content")){
-      this.addCapability("playing_content");
+      await this.addCapability("playing_content");
     }
   }
 
