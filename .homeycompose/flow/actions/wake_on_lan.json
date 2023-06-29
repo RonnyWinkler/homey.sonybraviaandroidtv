@@ -1,6 +1,4 @@
 {
-    "id": "wake_on_lan",
-    "highlight": true,
     "title": {
         "en": "Send wake-on-lan request.",
         "de": "Sende Wake-on-LAN-Anforderung.",

@@ -65,6 +65,7 @@ class SonyBraviaAndroidTvApp extends Homey.App {
         this._flowActionStartApp.registerRunListener(async (args, state) => {
           try{
             await SonyBraviaAndroidTvCommunicator.startApp(args.device, args.app.uri );
+            await args.device.checkDevice();
             return true;
           }
           catch(error){
@@ -83,6 +84,7 @@ class SonyBraviaAndroidTvApp extends Homey.App {
         this._flowActionSelectInput.registerRunListener(async (args, state) => {
           try{
             await SonyBraviaAndroidTvCommunicator.selectInput(args.device, args.input.uri );
+            await args.device.checkDevice();
             return true;
           }
           catch(error){
@@ -101,6 +103,7 @@ class SonyBraviaAndroidTvApp extends Homey.App {
         this._flowActionSelectTvChannel.registerRunListener(async (args, state) => {
           try{
             await SonyBraviaAndroidTvCommunicator.selectInput(args.device, args.channel.uri );
+            await args.device.checkDevice();
             return true;
           }
           catch(error){
@@ -135,6 +138,7 @@ class SonyBraviaAndroidTvApp extends Homey.App {
         this._flowActionIrccCommand.registerRunListener(async (args, state) => {
           try{
             await SonyBraviaAndroidTvCommunicator.sendCommand(args.device, args.ircc.ircc );
+            await args.device.checkDevice();
             return true;
           }
           catch(error){
@@ -147,6 +151,45 @@ class SonyBraviaAndroidTvApp extends Homey.App {
             return this._autocompleteIrccList.filter((result) => { 
                 return result.name.toLowerCase().includes(query.toLowerCase());
             });
+        });
+
+        this._flowActionAudioOutput = this.homey.flow.getActionCard('audio_output')
+        this._flowActionAudioOutput.registerRunListener(async (args, state) => {
+          try{
+            await SonyBraviaAndroidTvCommunicator.setSoundSettings(args.device, args.output );
+            await args.device.checkDevice();
+            return true;
+          }
+          catch(error){
+            this.error("Error executing flowAction 'audio_output': "+  error.message);
+            throw new Error(error.message);
+          }
+        });
+
+        this._flowActionScreenOffTrue = this.homey.flow.getActionCard('screen_off_true')
+        this._flowActionScreenOffTrue.registerRunListener(async (args, state) => {
+          try{
+            await args.device.screenOff( true );
+            await args.device.checkDevice();
+            return true;
+          }
+          catch(error){
+            this.error("Error executing flowAction 'screen_off_true': "+  error.message);
+            throw new Error(error.message);
+          }
+        });
+
+        this._flowActionScreenOffFalse = this.homey.flow.getActionCard('screen_off_false')
+        this._flowActionScreenOffFalse.registerRunListener(async (args, state) => {
+          try{
+            await args.device.screenOff( false );
+            await args.device.checkDevice();
+            return true;
+          }
+          catch(error){
+            this.error("Error executing flowAction 'screen_off_false': "+  error.message);
+            throw new Error(error.message);
+          }
         });
 
         // APP FLOW ACTIONS =========================================================================================
@@ -168,7 +211,6 @@ class SonyBraviaAndroidTvApp extends Homey.App {
               }
             );
           }
-    
           // filter based on the query
           return results.filter((result) => {
             return result.name.toLowerCase().includes(query.toLowerCase());
@@ -182,9 +224,24 @@ class SonyBraviaAndroidTvApp extends Homey.App {
           return (args.device.getCapabilityValue('input') == args.input);
         })
 
-        this._flowConditionAvailable = this.homey.flow.getConditionCard('available').registerRunListener(async (args, state) => {
+        this._flowConditionInput = this.homey.flow.getConditionCard('audio_output').registerRunListener(async (args, state) => {
           await args.device.checkDevice();
-          return (args.device.getAvailable());
+          return (args.device.getCapabilityValue('audio_output') == args.output);
+        })
+
+        this._flowConditionAvailable = this.homey.flow.getConditionCard('available').registerRunListener(async (args, state) => {
+          try{
+            await SonyBraviaAndroidTvCommunicator.getDevicePowerState(args.device);
+            return true;
+          }
+          catch(err){
+            return false;
+          }
+        })
+
+        this._flowConditionScreenOff = this.homey.flow.getConditionCard('screen_off').registerRunListener(async (args, state) => {
+          await args.device.checkDevice();
+          return (args.device.getCapabilityValue('screen_off') == args.output);
         })
 
     }

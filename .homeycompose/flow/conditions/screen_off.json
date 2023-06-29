@@ -1,0 +1,12 @@
+{
+    "title": {
+        "en": "Screen !{{is off|is on}}",
+        "nl": "scherm staat  !{{aan|uit}}"
+    },
+    "args": [{
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        }
+    ]
+}

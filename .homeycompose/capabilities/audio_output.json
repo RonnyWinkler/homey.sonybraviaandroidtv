@@ -1,0 +1,40 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Audio output",
+    "nl": "Audio uitgang"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "speaker",
+      "title": { 
+        "en": "Speaker",
+        "nl": "Spreker"
+      }
+    },
+    {
+      "id": "audioSystem",
+      "title": { 
+        "en": "Audio system",
+        "nl": "Audio systeem"
+      }
+    },
+    {
+      "id": "hdmi",
+      "title": { 
+        "en": "HDMI",
+        "nl": "HDMI"
+      }
+    },
+    {
+      "id": "speaker_hdmi",
+      "title": { 
+        "en": "Speaker and HDMI",
+        "nl": "Spreker and HDMI"
+      }
+    }
+  ]
+}

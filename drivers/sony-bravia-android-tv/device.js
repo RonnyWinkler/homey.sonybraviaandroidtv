@@ -24,6 +24,12 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
     if (!this.hasCapability("playing_content")){
       await this.addCapability("playing_content");
     }
+    if (!this.hasCapability("audio_output")){
+      await this.addCapability("audio_output");
+    }
+    if (!this.hasCapability("screen_off")){
+      await this.addCapability("screen_off");
+    }
   }
 
   onUninit(){
@@ -148,16 +154,20 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
       await this._checkDevicePowerState();
       await this._checkDeviceVolume();
       await this._checkPlayingContent();
+      await this._checkSoundSettings();
+      await this._checkPowerSavingMode();
     }
   }
 
   async _checkDeviceAvailability() {
-    try {
-      await SonyBraviaAndroidTvCommunicator.getDevicePowerState(this);
-      return this.setAvailable();
-    } catch (err) {
-      return this.setUnavailable();
-    }
+    // Don't set device unavailable. Keep it available but off to turn ov with wWoL
+    
+    // try {
+    //   await SonyBraviaAndroidTvCommunicator.getDevicePowerState(this);
+    //   return this.setAvailable();
+    // } catch (err) {
+    //   return this.setUnavailable();
+    // }
   }
 
   async _checkDevicePowerState() {
@@ -177,6 +187,28 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
     }
   }
 
+  async _checkPowerSavingMode() {
+    try {
+      let state = await SonyBraviaAndroidTvCommunicator.getSgetPowerSavingModeoundSettings(this);
+      // this.log(`[Device] ${this.getName()}: current volume state: `, state);
+      if (state && state.mode){
+        if (state.mode == 'pictureOff'){
+          this.setCapabilityValue('screen_off', true);
+        }
+        else{
+          this.setCapabilityValue('screen_off', false);
+          device.setStoreValue('power_saving_mode', state.mode);   
+        }
+      }
+      else{
+        this.setCapabilityValue('audio_output', null);
+      }
+    }
+    catch (err) {
+      // this.log(`[Device] ${this.getName()}: getVolume error: ${err.message}`);
+    }
+  }
+
   async _checkDeviceVolume() {
     try {
       let state = await SonyBraviaAndroidTvCommunicator.getVolume(this, 'speaker');
@@ -186,6 +218,22 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
       let volume = state.volume / state.maxVolume;
       this.setCapabilityValue('volume_set', volume);
       this.setCapabilityValue('volume_mute', state.mute);
+    }
+    catch (err) {
+      // this.log(`[Device] ${this.getName()}: getVolume error: ${err.message}`);
+    }
+  }
+
+  async _checkSoundSettings() {
+    try {
+      let state = await SonyBraviaAndroidTvCommunicator.getSoundSettings(this);
+      // this.log(`[Device] ${this.getName()}: current volume state: `, state);
+      if (state && state.currentValue){
+        this.setCapabilityValue('audio_output', state.currentValue);
+      }
+      else{
+        this.setCapabilityValue('audio_output', null);
+      }
     }
     catch (err) {
       // this.log(`[Device] ${this.getName()}: getVolume error: ${err.message}`);
@@ -449,6 +497,32 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
     return result;
   }
 
+  async screenOff(_value){
+    try{
+      this.log(`set screen_off to ${_value}.`);
+      if (_value == true){
+        // true, so screenshould be turned off
+        // store last value to go back when screen_off is set to false
+        let lastMode = await SonyBraviaAndroidTvCommunicator.getPowerSavingMode(this);
+        await this.setStoreValue('power_saving_mode', lastMode.mode);           
+        return SonyBraviaAndroidTvCommunicator.setPowerSavingMode(this, 'pictureOff');
+      }
+      else{
+        // false, go back to last state
+        let lastMode = this.getStoreValue('power_saving_mode');         
+        // if no mode is known, don't change
+        if (lastMode != undefined && lastMode != 'pictureOff'){
+          return SonyBraviaAndroidTvCommunicator.setPowerSavingMode(this, lastMode);
+        }
+        else{
+          return SonyBraviaAndroidTvCommunicator.setPowerSavingMode(this, 'low');
+        }
+      }
+    }
+    catch(err){
+      throw err;
+    }
+  }
 }
 
 module.exports = SonyBraviaAndroidTvDevice;

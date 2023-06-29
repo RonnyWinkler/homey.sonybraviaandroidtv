@@ -1,0 +1,11 @@
+{
+    "title": {
+      "en": "Screen off",
+      "nl": "Scherm uit"
+    },
+    "type": "boolean",
+    "getable": true,
+    "setable": true,
+    "uiComponent": "button",
+    "icon": "/assets/capabilities/screen_off.svg"
+}

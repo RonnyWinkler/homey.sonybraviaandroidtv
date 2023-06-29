@@ -1,0 +1,51 @@
+{
+    "title": {
+      "en": "Set audio output",
+      "nl": "Stel de audio-uitvoer in"
+    },
+    "titleFormatted": {
+      "en": "Set audio output to [[output]]",
+      "nl": "Stel de audio-uitvoer [[output]] in op"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        },
+        {
+            "name": "output",
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "speaker",
+                    "title": { 
+                    "en": "Speaker",
+                    "nl": "Spreker"
+                    }
+                },
+                {
+                    "id": "audioSystem",
+                    "title": { 
+                    "en": "Audio system",
+                    "nl": "Audio systeem"
+                    }
+                },
+                {
+                    "id": "hdmi",
+                    "title": { 
+                    "en": "HDMI",
+                    "nl": "HDMI"
+                    }
+                },
+                {
+                    "id": "speaker_hdmi",
+                    "title": { 
+                    "en": "Speaker and HDMI",
+                    "nl": "Spreker and HDMI"
+                    }
+                }
+            ]            
+        }
+    ]
+}

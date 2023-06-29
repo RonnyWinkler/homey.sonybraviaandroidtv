@@ -50,5 +50,9 @@
   "2.0.10": {
     "en": "Optimized technical updated on startup.",
     "de": "Technische Aktualisierungen beim Start optimiert."
+  },
+  "2.0.11": {
+    "en": "Added audio output and screen off state.",
+    "de": "Audio-Ausgang und Bildschirm-Aus-Status ergänzt."
   }
 }

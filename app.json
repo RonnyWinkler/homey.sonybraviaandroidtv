@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "name.ricardoismy.sonybraviaandroidtv",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "compatibility": ">=8.1.0",
   "sdk": 3,
   "name": {
@@ -206,6 +206,66 @@
     "conditions": [
       {
         "title": {
+          "en": "Audio output !{{is|isn't}}",
+          "nl": "Audio uitgang !{{is|is niet}}"
+        },
+        "titleFormatted": {
+          "en": "Audio output !{{is|isn't}} [[output]]",
+          "nl": "Audio uitgang !{{is|is niet}} [[output]]"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          },
+          {
+            "name": "output",
+            "type": "dropdown",
+            "title": {
+              "en": "Audio output",
+              "nl": "Audio uitgang"
+            },
+            "placeholder": {
+              "en": "Select the audio output",
+              "nl": "Selecteer de audio-uitvoer"
+            },
+            "values": [
+              {
+                "id": "speaker",
+                "title": {
+                  "en": "Speaker",
+                  "nl": "Spreker"
+                }
+              },
+              {
+                "id": "audioSystem",
+                "title": {
+                  "en": "Audio system",
+                  "nl": "Audio systeem"
+                }
+              },
+              {
+                "id": "hdmi",
+                "title": {
+                  "en": "HDMI",
+                  "nl": "HDMI"
+                }
+              },
+              {
+                "id": "speaker_hdmi",
+                "title": {
+                  "en": "Speaker and HDMI",
+                  "nl": "Spreker and HDMI"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "audio_output"
+      },
+      {
+        "title": {
           "en": "TV !{{is|isn't}} available",
           "de": "TV !{{ist|ist nicht}} verfügbar",
           "nl": "TV !{{is|is niet}} beschikbaar"
@@ -294,6 +354,20 @@
           }
         ],
         "id": "input"
+      },
+      {
+        "title": {
+          "en": "Screen !{{is off|is on}}",
+          "nl": "scherm staat  !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          }
+        ],
+        "id": "screen_off"
       }
     ],
     "actions": [
@@ -326,6 +400,58 @@
           }
         ],
         "id": "app_start"
+      },
+      {
+        "title": {
+          "en": "Set audio output",
+          "nl": "Stel de audio-uitvoer in"
+        },
+        "titleFormatted": {
+          "en": "Set audio output to [[output]]",
+          "nl": "Stel de audio-uitvoer [[output]] in op"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          },
+          {
+            "name": "output",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "speaker",
+                "title": {
+                  "en": "Speaker",
+                  "nl": "Spreker"
+                }
+              },
+              {
+                "id": "audioSystem",
+                "title": {
+                  "en": "Audio system",
+                  "nl": "Audio systeem"
+                }
+              },
+              {
+                "id": "hdmi",
+                "title": {
+                  "en": "HDMI",
+                  "nl": "HDMI"
+                }
+              },
+              {
+                "id": "speaker_hdmi",
+                "title": {
+                  "en": "Speaker and HDMI",
+                  "nl": "Spreker and HDMI"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "audio_output"
       },
       {
         "deprecated": true,
@@ -458,6 +584,42 @@
           }
         ],
         "id": "Options"
+      },
+      {
+        "title": {
+          "en": "Turn screen on.",
+          "nl": "Schakel het scherm in."
+        },
+        "titleFormatted": {
+          "en": "Turn screen on.",
+          "nl": "Schakel het scherm in."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          }
+        ],
+        "id": "screen_off_false"
+      },
+      {
+        "title": {
+          "en": "Turn screen off.",
+          "nl": "Schakel het scherm uit."
+        },
+        "titleFormatted": {
+          "en": "Turn screen off.",
+          "nl": "Schakel het scherm uit."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+          }
+        ],
+        "id": "screen_off_true"
       },
       {
         "deprecated": true,
@@ -646,8 +808,6 @@
         "id": "tv_channel_select"
       },
       {
-        "id": "wake_on_lan",
-        "highlight": true,
         "title": {
           "en": "Send wake-on-lan request.",
           "de": "Sende Wake-on-LAN-Anforderung.",
@@ -671,7 +831,8 @@
               "nl": "Selecteer je TV"
             }
           }
-        ]
+        ],
+        "id": "wake_on_lan"
       }
     ]
   },
@@ -694,7 +855,9 @@
         "volume_mute",
         "volume_set",
         "input",
-        "playing_content"
+        "playing_content",
+        "audio_output",
+        "screen_off"
       ],
       "pair": [
         {
@@ -832,6 +995,46 @@
     }
   ],
   "capabilities": {
+    "audio_output": {
+      "type": "enum",
+      "title": {
+        "en": "Audio output",
+        "nl": "Audio uitgang"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "speaker",
+          "title": {
+            "en": "Speaker",
+            "nl": "Spreker"
+          }
+        },
+        {
+          "id": "audioSystem",
+          "title": {
+            "en": "Audio system",
+            "nl": "Audio systeem"
+          }
+        },
+        {
+          "id": "hdmi",
+          "title": {
+            "en": "HDMI",
+            "nl": "HDMI"
+          }
+        },
+        {
+          "id": "speaker_hdmi",
+          "title": {
+            "en": "Speaker and HDMI",
+            "nl": "Spreker and HDMI"
+          }
+        }
+      ]
+    },
     "input": {
       "type": "enum",
       "title": {
@@ -897,6 +1100,17 @@
       "getable": true,
       "setable": false,
       "uiComponent": null
+    },
+    "screen_off": {
+      "title": {
+        "en": "Screen off",
+        "nl": "Scherm uit"
+      },
+      "type": "boolean",
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/screen_off.svg"
     }
   }
 }

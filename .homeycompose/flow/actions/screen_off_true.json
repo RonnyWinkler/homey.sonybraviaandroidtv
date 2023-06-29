@@ -1,0 +1,17 @@
+{
+    "title": {
+        "en": "Turn screen off.",
+        "nl": "Schakel het scherm uit."
+    },
+    "titleFormatted": {
+        "en": "Turn screen off.",
+        "nl": "Schakel het scherm uit."
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sony-bravia-android-tv"
+        }
+    ]
+}

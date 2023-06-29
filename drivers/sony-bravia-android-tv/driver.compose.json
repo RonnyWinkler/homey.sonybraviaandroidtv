@@ -16,7 +16,9 @@
     "volume_mute",
     "volume_set",
     "input",
-    "playing_content"
+    "playing_content",
+    "audio_output",
+    "screen_off"
   ],
   "pair": [
     {
