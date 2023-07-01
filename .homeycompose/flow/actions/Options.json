@@ -2,10 +2,12 @@
     "deprecated": true,
     "title": {
       "en": "Open Options",
+      "de": "Öffne Einstellungen",
       "nl": "Opties openen"
     },
     "titleFormatted": {
         "en": "Open Options",
+        "de": "Öffne Einstellungen",
         "nl": "Opties openen"
       },
       "args": [

@@ -2,10 +2,12 @@
     "deprecated": true,
     "title": {
       "en": "Send Enter command",
+      "de": "Sende Enter-Kommando",
       "nl": "Enter commando versturen"
     },
     "titleFormatted": {
         "en": "Send Enter command",
+        "de": "Sende Enter-Kommando",
         "nl": "Enter commando versturen"
       },
       "args": [

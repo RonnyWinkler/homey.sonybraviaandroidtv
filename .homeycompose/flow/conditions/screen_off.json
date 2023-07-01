@@ -1,7 +1,8 @@
 {
     "title": {
         "en": "Screen !{{is off|is on}}",
-        "nl": "scherm staat  !{{aan|uit}}"
+        "de": "Bildschirm !{{ist aus|ist an}}",
+        "nl": "Scherm staat !{{aan|uit}}"
     },
     "args": [{
             "name": "device",

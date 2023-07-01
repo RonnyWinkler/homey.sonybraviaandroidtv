@@ -3,6 +3,7 @@
       "type": "group",
       "label": {
         "en": "General settings",
+        "de": "Allgemeine Einstellungen",
         "nl": "Algemene instellingen"
       },
       "children": [
@@ -11,6 +12,7 @@
           "type": "text",
           "label": {
             "en": "IP address",
+            "de": "IP-Adresse",
             "nl": "IP adres"
           },
           "value": "0.0.0.0"
@@ -20,6 +22,7 @@
           "type": "password",
           "label": {
             "en": "Pre-shared key",
+            "de": "Vorinstallierter Schlüssel",
             "nl": "Pre-shared key"
           },
           "value": ""
@@ -28,13 +31,15 @@
           "id": "polling",
           "type": "number",
           "label": {
-            "en": "Device polling interval in minutes/seconds",
-            "nl": "Apparaat polling interval in minuten/seconden"
+            "en": "Device polling interval",
+            "de": "Abruf-Intervall",
+            "nl": "Apparaat polling interval"
           },
           "value": 1,
           "min": 1,
           "hint": {
             "en": "Lowering this value improves automation responses when regular remote is used, but also increases load on your Homey.",
+            "de": "Das Verringern dieses Werts verbessert die Reaktionen bei Verwendung einer normalen Fernbedienung, erhöht aber auch die Auslastung deines Homeys.",
             "nl": "Een lagere waarde zorgt voor een snellere terugkoppeling van de televisie wanneer de afstandbediening wordt gebruikt, maar is zwaarder voor de Homey om te verwerken."
           }
         },
@@ -43,7 +48,8 @@
             "type": "dropdown",
             "label": { 
                 "en": "Interval unit",
-                "de": "Interval eenheid"
+                "de": "Intervall-Einheit",
+                "nl": "Interval eenheid"
             },
             "value": "min",
             "values":[
@@ -51,14 +57,16 @@
                     "id": "min",
                     "label":{
                         "en": "Minutes",
-                        "de": "Minuten"
+                        "de": "Minuten",
+                        "nl": "Minuten"
                     }
                 },
                 {
                     "id": "sec",
                     "label":{
                         "en": "Seconds",
-                        "de": "Sekunden"
+                        "de": "Sekunden",
+                        "nl": "Sekunden"
                     }
                 }
             ]
@@ -69,11 +77,13 @@
           "value": false,
           "label": {
             "en": "Different polling when TV is switched off",
+            "de": "Abruf-Intervall für ausgeschalteten TV",
             "nl": "Verschillende polling als de tv uit staat"
           },
           "hint": {
-            "en": "You can set a differnent polling interval when the TV is off.",
-            "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld."
+            "en": "You can set a differnent polling interval when the TV is off to allow TV to go into deep sleep.",
+            "de": "Es kann ein abweichendes Abruf-Intervall für einen ausgeschalteten TV angegeben werden, um den Wechsel in den Tiefschlaf zu erlauben.",
+            "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld om de tv in diepe slaap te laten gaan."
           }
         },
         {
@@ -81,13 +91,15 @@
           "type": "number",
           "label": {
             "en": "Polling interval in minutes when TV is off",
+            "de": "Abruf-Intervall in Minuten für augeschalteten TV",
             "nl": "Polling-interval in minuten wanneer de tv is uitgeschakeld"
           },
           "value": 5,
           "min": 1,
           "hint": {
-            "en": "You can set a differnent polling interval when the TV is off. Use interval >2min to allow the TV go to deep sleep if 'Powered on by apps' is noc activated.",
-            "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld. Gebruik interval >2 min om de tv in diepe slaapstand te laten gaan als 'Powered on by apps' niet is geactiveerd."
+            "en": "You can set a differnent polling interval when the TV is off. Use interval >2min to allow the TV go to deep sleep if 'network standby' is noc activated.",
+            "de": "Es kann ein abweichendes Abruf-Intervall verwendet werden, wenn das Fernsehgerät ausgeschaltet ist. Verwende ein Intervall >2 Minuten, damit das Fernsehgerät in den Tiefschlaf gehen kann, wenn 'Netzwerk-Standby' nicht aktiviert ist.",
+            "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld. Gebruik interval >2 min om de tv in diepe slaapstand te laten gaan als 'netwerk stand-by' niet is geactiveerd."
           }
         },
         {
@@ -95,6 +107,7 @@
           "type": "text",
           "label": {
             "en": "MAC address",
+            "de": "MAC-Adresse",
             "nl": "MAC adres"
           },
           "value": "00:00:00:00:00:00"

@@ -2,6 +2,7 @@
   "type": "string",
   "title": {
     "en": "Playing content",
+    "de": "Angezeigter Inhalt",
     "nl": "Inhoud afspelen"
   },
   "getable": true,

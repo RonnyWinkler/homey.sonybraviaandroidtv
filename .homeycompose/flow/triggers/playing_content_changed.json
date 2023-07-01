@@ -1,6 +1,7 @@
 {
     "title": {
         "en": "Playing content changed",
+        "de": "Angezeigter Inhalt geändert",
         "nl": "Inhoud afspelen veranderd"
     },
     "tokens": [
@@ -9,6 +10,7 @@
             "type": "string",
             "title": {
                 "en": "uri",
+                "de": "uri",
                 "nl": "uri"
             },
             "example": "extInput:hdmi?port=1"
@@ -18,6 +20,7 @@
             "type": "string",
             "title": {
                 "en": "Source",
+                "de": "Eingang",
                 "nl": "Bron"
             },
             "example": "extInput:hdmi"
@@ -27,6 +30,7 @@
             "type": "string",
             "title": {
                 "en": "Title",
+                "de": "Titel",
                 "nl": "Titel"
             },
             "example": "HDMI 3 (eARC/ARC)"
@@ -36,6 +40,7 @@
             "type": "string",
             "title": {
                 "en": "Program number",
+                "de": "Programm-Nummer",
                 "nl": "Programma nummer"
             },
             "example": "0001"
@@ -45,6 +50,7 @@
             "type": "string",
             "title": {
                 "en": "Triplet",
+                "de": "Triplet",
                 "nl": "Triplet"
             },
             "example": "0001"
@@ -54,6 +60,7 @@
             "type": "string",
             "title": {
                 "en": "Program title",
+                "de": "Programm-Titel",
                 "nl": "Programma titel"
             }
         },
@@ -62,6 +69,7 @@
             "type": "string",
             "title": {
                 "en": "Start date & time",
+                "de": "Start-Datum und -Zeit",
                 "nl": "Startdatum & -tijd"
             },
             "example": "2023-06-22T20:00:00+0200"
@@ -71,6 +79,7 @@
             "type": "number",
             "title": {
                 "en": "Duration",
+                "de": "Dauer",
                 "nl": "Duur"
             },
             "example": "900"

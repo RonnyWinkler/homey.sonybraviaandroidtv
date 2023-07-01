@@ -1,10 +1,12 @@
 {
     "title": { 
         "en": "Send remote control command",
+        "de": "Sende Remote-Control-Kommande",
         "nl": "Stuur commando afstandsbediening"
     },
     "titleFormatted": { 
         "en": "Send remote control command [[ircc]]",
+        "de": "Sende das Remote-Control-Kommando [[ircc]]",
         "nl": "Stuur commando afstandsbediening [[ircc]]"
     },
     "args": [
@@ -18,10 +20,12 @@
             "name": "ircc",
             "title": { 
                 "en": "RC command",
+                "de": "RC-Kommando",
                 "nl": "RC-commando"
             },
             "placeholder": { 
                 "en": "Select an RC command",
+                "de": "Wähle ein RC-Kommando",
                 "nl": "Selecteer een RC-commando"
             }
         }

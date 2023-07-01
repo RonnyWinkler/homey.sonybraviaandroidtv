@@ -2,10 +2,12 @@
     "deprecated": true,
     "title": {
       "en": "Set HDMI input",
+      "de": "Wähle HDMI-Eingang",
       "nl": "Selecteer HDMI ingang"
     },
     "titleFormatted": {
       "en": "Set HDMI input to [[Input]]",
+      "de": "Wähle den HDMI-Eingang [[Input]]",
       "nl": "Selecteer HDMI ingang naar [[Input]]"
     },
     "args": [
@@ -21,25 +23,25 @@
             {
                 "id": "Hdmi1",
                 "label": {
-                "en": "HDMI 1"
+                    "en": "HDMI 1"
                 }
             },
             {
                 "id": "Hdmi2",
                 "label": {
-                "en": "HDMI 2"
+                    "en": "HDMI 2"
                 }
             },
             {
                 "id": "Hdmi3",
                 "label": {
-                "en": "HDMI 3"
+                    "en": "HDMI 3"
                 }
             },
             {
                 "id": "Hdmi4",
                 "label": {
-                "en": "HDMI 4"
+                    "en": "HDMI 4"
                 }
             }
             ]

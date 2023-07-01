@@ -1,10 +1,12 @@
 {
     "title": {
       "en": "Set audio output",
+      "de": "Wähle Audio-Ausgang",
       "nl": "Stel de audio-uitvoer in"
     },
     "titleFormatted": {
       "en": "Set audio output to [[output]]",
+      "de": "Wähle Audio-Ausgang [[output]]",
       "nl": "Stel de audio-uitvoer [[output]] in op"
     },
     "args": [
@@ -20,29 +22,33 @@
                 {
                     "id": "speaker",
                     "title": { 
-                    "en": "Speaker",
-                    "nl": "Spreker"
+                        "en": "Speaker",
+                        "de": "Lautsprecher",
+                        "nl": "Spreker"
                     }
                 },
                 {
                     "id": "audioSystem",
                     "title": { 
-                    "en": "Audio system",
-                    "nl": "Audio systeem"
+                        "en": "Audio system",
+                        "de": "Ausio-System",
+                        "nl": "Audio systeem"
                     }
                 },
                 {
                     "id": "hdmi",
                     "title": { 
-                    "en": "HDMI",
-                    "nl": "HDMI"
+                        "en": "HDMI",
+                        "de": "HDMI",
+                        "nl": "HDMI"
                     }
                 },
                 {
                     "id": "speaker_hdmi",
                     "title": { 
-                    "en": "Speaker and HDMI",
-                    "nl": "Spreker and HDMI"
+                        "en": "Speaker and HDMI",
+                        "de": "Lautsprecher und HDMI",
+                        "nl": "Spreker and HDMI"
                     }
                 }
             ]            

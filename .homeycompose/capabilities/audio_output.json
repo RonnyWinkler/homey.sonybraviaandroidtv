@@ -2,6 +2,7 @@
   "type": "enum",
   "title": {
     "en": "Audio output",
+    "de": "Audio-Ausgang",
     "nl": "Audio uitgang"
   },
   "getable": true,
@@ -12,6 +13,7 @@
       "id": "speaker",
       "title": { 
         "en": "Speaker",
+        "de": "Lautsprecher",
         "nl": "Spreker"
       }
     },
@@ -19,6 +21,7 @@
       "id": "audioSystem",
       "title": { 
         "en": "Audio system",
+        "de": "Audio-System",
         "nl": "Audio systeem"
       }
     },
@@ -26,6 +29,7 @@
       "id": "hdmi",
       "title": { 
         "en": "HDMI",
+        "de": "HDMI",
         "nl": "HDMI"
       }
     },
@@ -33,6 +37,7 @@
       "id": "speaker_hdmi",
       "title": { 
         "en": "Speaker and HDMI",
+        "de": "Lautsprecher und HDMI",
         "nl": "Spreker and HDMI"
       }
     }

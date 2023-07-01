@@ -1,6 +1,7 @@
 {
     "title": {
         "en": "Input changed",
+        "de": "Eingang geändert",
         "nl": "Invoer veranderd"
     },
     "tokens": [
@@ -9,6 +10,7 @@
             "type": "string",
             "title": {
                 "en": "Input",
+                "de": "Eingang",
                 "nl": "Invoer"
             },
             "example": "extInput:hdmi?port=1"
@@ -19,6 +21,7 @@
             "type": "string",
             "title": {
                 "en": "Input name",
+                "de": "Eingang Name",
                 "nl": "Invoer naam"
             },
             "example": "HDMI 1"

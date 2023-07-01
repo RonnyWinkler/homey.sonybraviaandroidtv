@@ -2,6 +2,7 @@
     "deprecated": true,
     "title": {
       "en": "Open Electronic Program Guide",
+      "de": "Öffne den elektronischen Programmführer",
       "nl": "Elektronische Programma Gids openen"
     },
     "args": [

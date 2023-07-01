@@ -54,5 +54,13 @@
   "2.0.11": {
     "en": "Added audio output and screen off state.",
     "de": "Audio-Ausgang und Bildschirm-Aus-Status ergänzt."
+  },
+  "2.0.12": {
+    "en": "Added german translation. Fixed input selection.",
+    "de": "Deutsche Übersetzung ergänzt. Input-Selection korrigiert."
+  },
+  "2.0.13": {
+    "en": "Extended german translation and corrected descriptions.",
+    "de": "Deutsche Übersetzung ergänzt und Beschreibungen korrigiert."
   }
 }

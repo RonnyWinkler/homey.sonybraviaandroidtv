@@ -1,10 +1,12 @@
 {
     "title": {
         "en": "Audio output !{{is|isn't}}",
+        "de": "Audio-Ausgang !{{ist|ist nicht}}",
         "nl": "Audio uitgang !{{is|is niet}}"
     },
     "titleFormatted": {
         "en": "Audio output !{{is|isn't}} [[output]]",
+        "de": "Audio-Ausgang !{{ist|ist nicht}} [[output]]",
         "nl": "Audio uitgang !{{is|is niet}} [[output]]"
     },
     "args": [
@@ -18,39 +20,45 @@
             "type": "dropdown",
             "title": { 
                 "en": "Audio output",
+                "de": "Audio-Ausgang",
                 "nl": "Audio uitgang"
             },
             "placeholder": { 
                 "en": "Select the audio output",
+                "de": "Wähle den Ausdio-Ausgang",
                 "nl": "Selecteer de audio-uitvoer"
             },
             "values": [
                 {
                     "id": "speaker",
                     "title": { 
-                    "en": "Speaker",
-                    "nl": "Spreker"
+                        "en": "Speaker",
+                        "de": "Lautsprecher",
+                        "nl": "Spreker"
                     }
                 },
                 {
                     "id": "audioSystem",
                     "title": { 
-                    "en": "Audio system",
-                    "nl": "Audio systeem"
+                        "en": "Audio system",
+                        "de": "Ausio-System",
+                        "nl": "Audio systeem"
                     }
                 },
                 {
                     "id": "hdmi",
                     "title": { 
-                    "en": "HDMI",
-                    "nl": "HDMI"
+                        "en": "HDMI",
+                        "de": "HDMI",
+                        "nl": "HDMI"
                     }
                 },
                 {
                     "id": "speaker_hdmi",
                     "title": { 
-                    "en": "Speaker and HDMI",
-                    "nl": "Spreker and HDMI"
+                        "en": "Speaker and HDMI",
+                        "de": "Lautsprecher und HDMI",
+                        "nl": "Spreker and HDMI"
                     }
                 }
             ] 

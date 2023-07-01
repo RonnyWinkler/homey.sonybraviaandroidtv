@@ -1,10 +1,12 @@
 {
     "title": { 
         "en": "Start app",
+        "de": "Starte eine App",
         "nl": "App starten"
     },
     "titleFormatted": { 
         "en": "Start app [[app]]",
+        "de": "Starte App [[app]]",
         "nl": "App [[app]] starten"
     },
     "args": [
@@ -17,11 +19,13 @@
             "type": "autocomplete",
             "name": "app",
             "title": { 
-                "en": "app",
-                "nl": "app"
+                "en": "App",
+                "de": "App",
+                "nl": "App"
             },
             "placeholder": { 
                 "en": "Select an app",
+                "de": "Wähle eine App",
                 "nl": "Selecteer een app"
             }
         }

@@ -2,10 +2,12 @@
     "deprecated": true,
     "title": {
         "en": "Start Netflix",
+        "de": "Starte Netflix",
         "nl": "Open Netflix"
     },
     "titleFormatted": {
         "en": "Start Netflix",
+        "de": "Starte Netflix",
         "nl": "Open Netflix"
     },
     "args": [

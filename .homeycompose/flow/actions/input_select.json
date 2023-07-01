@@ -1,10 +1,12 @@
 {
     "title": { 
         "en": "Select input",
+        "de": "Wähle Eingang",
         "nl": "Selecteer invoer"
     },
     "titleFormatted": { 
         "en": "Select input [[input]]",
+        "de": "Wähle den Eingang [[input]]",
         "nl": "Selecteer invoer [[input]]"
     },
     "args": [
@@ -18,10 +20,12 @@
             "name": "input",
             "title": { 
                 "en": "Input",
+                "de": "Eingang",
                 "nl": "Invoer"
             },
             "placeholder": { 
                 "en": "Select an input",
+                "de": "Wähle einen Eingang",
                 "nl": "Selecteer een invoer"
             }
         }

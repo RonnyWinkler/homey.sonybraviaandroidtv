@@ -1,4 +1,4 @@
-This app adds support for Sony BRAVIA Android TV devices in Homey. For usage instructions, please follow the in-app instructions page available during pairing and setup.
+Use your Sony BRAVIA Android TV in Homey. Please note the further information on the setup in the dialog during the adding of the device.
 
-For questions or issues please ask in Homey forum thread linked below.
-For bug reports or feature requests please use the forum tread or Github repository linked below.
+Please ask questions or report issues in the Homey forum post linked below.
+Error messages or enhancement requests can be reported as an issue in the Homey forum post or in the Github repository.

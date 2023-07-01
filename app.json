@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "name.ricardoismy.sonybraviaandroidtv",
-  "version": "2.0.11",
+  "version": "2.0.13",
   "compatibility": ">=8.1.0",
   "sdk": 3,
   "name": {
@@ -56,6 +56,7 @@
       {
         "title": {
           "en": "Input changed",
+          "de": "Eingang geändert",
           "nl": "Invoer veranderd"
         },
         "tokens": [
@@ -64,6 +65,7 @@
             "type": "string",
             "title": {
               "en": "Input",
+              "de": "Eingang",
               "nl": "Invoer"
             },
             "example": "extInput:hdmi?port=1"
@@ -73,6 +75,7 @@
             "type": "string",
             "title": {
               "en": "Input name",
+              "de": "Eingang Name",
               "nl": "Invoer naam"
             },
             "example": "HDMI 1"
@@ -90,6 +93,7 @@
       {
         "title": {
           "en": "Playing content changed",
+          "de": "Angezeigter Inhalt geändert",
           "nl": "Inhoud afspelen veranderd"
         },
         "tokens": [
@@ -98,6 +102,7 @@
             "type": "string",
             "title": {
               "en": "uri",
+              "de": "uri",
               "nl": "uri"
             },
             "example": "extInput:hdmi?port=1"
@@ -107,6 +112,7 @@
             "type": "string",
             "title": {
               "en": "Source",
+              "de": "Eingang",
               "nl": "Bron"
             },
             "example": "extInput:hdmi"
@@ -116,6 +122,7 @@
             "type": "string",
             "title": {
               "en": "Title",
+              "de": "Titel",
               "nl": "Titel"
             },
             "example": "HDMI 3 (eARC/ARC)"
@@ -125,6 +132,7 @@
             "type": "string",
             "title": {
               "en": "Program number",
+              "de": "Programm-Nummer",
               "nl": "Programma nummer"
             },
             "example": "0001"
@@ -134,6 +142,7 @@
             "type": "string",
             "title": {
               "en": "Triplet",
+              "de": "Triplet",
               "nl": "Triplet"
             },
             "example": "0001"
@@ -143,6 +152,7 @@
             "type": "string",
             "title": {
               "en": "Program title",
+              "de": "Programm-Titel",
               "nl": "Programma titel"
             }
           },
@@ -151,6 +161,7 @@
             "type": "string",
             "title": {
               "en": "Start date & time",
+              "de": "Start-Datum und -Zeit",
               "nl": "Startdatum & -tijd"
             },
             "example": "2023-06-22T20:00:00+0200"
@@ -160,6 +171,7 @@
             "type": "number",
             "title": {
               "en": "Duration",
+              "de": "Dauer",
               "nl": "Duur"
             },
             "example": "900"
@@ -177,6 +189,7 @@
       {
         "title": {
           "en": "Volume mute has been deactivated",
+          "de": "Stummschaltung wurde deaktiviert",
           "nl": "Volume dempen is gedeactiveerd"
         },
         "args": [
@@ -191,6 +204,7 @@
       {
         "title": {
           "en": "Volume mute has been activated",
+          "de": "Stummschaltung wurde aktiviert",
           "nl": "Volume dempen is geactiveerd"
         },
         "args": [
@@ -207,10 +221,12 @@
       {
         "title": {
           "en": "Audio output !{{is|isn't}}",
+          "de": "Audio-Ausgang !{{ist|ist nicht}}",
           "nl": "Audio uitgang !{{is|is niet}}"
         },
         "titleFormatted": {
           "en": "Audio output !{{is|isn't}} [[output]]",
+          "de": "Audio-Ausgang !{{ist|ist nicht}} [[output]]",
           "nl": "Audio uitgang !{{is|is niet}} [[output]]"
         },
         "args": [
@@ -224,10 +240,12 @@
             "type": "dropdown",
             "title": {
               "en": "Audio output",
+              "de": "Audio-Ausgang",
               "nl": "Audio uitgang"
             },
             "placeholder": {
               "en": "Select the audio output",
+              "de": "Wähle den Ausdio-Ausgang",
               "nl": "Selecteer de audio-uitvoer"
             },
             "values": [
@@ -235,6 +253,7 @@
                 "id": "speaker",
                 "title": {
                   "en": "Speaker",
+                  "de": "Lautsprecher",
                   "nl": "Spreker"
                 }
               },
@@ -242,6 +261,7 @@
                 "id": "audioSystem",
                 "title": {
                   "en": "Audio system",
+                  "de": "Ausio-System",
                   "nl": "Audio systeem"
                 }
               },
@@ -249,6 +269,7 @@
                 "id": "hdmi",
                 "title": {
                   "en": "HDMI",
+                  "de": "HDMI",
                   "nl": "HDMI"
                 }
               },
@@ -256,6 +277,7 @@
                 "id": "speaker_hdmi",
                 "title": {
                   "en": "Speaker and HDMI",
+                  "de": "Lautsprecher und HDMI",
                   "nl": "Spreker and HDMI"
                 }
               }
@@ -282,10 +304,12 @@
       {
         "title": {
           "en": "Input !{{is|isn't}}",
+          "de": "Eingang !{{ist|ist nicht}}",
           "nl": "Invoer !{{is|is niet}}"
         },
         "titleFormatted": {
           "en": "Input !{{is|isn't}} [[input]]",
+          "de": "Eingang !{{ist|ist nicht}} [[input]]",
           "nl": "Invoer !{{is|is niet}} [[input]]"
         },
         "args": [
@@ -299,10 +323,12 @@
             "type": "dropdown",
             "title": {
               "en": "Input",
+              "de": "Eingang",
               "nl": "Invoer"
             },
             "placeholder": {
               "en": "Select the input",
+              "de": "Wähle den Eingang",
               "nl": "Selecteer de invoer"
             },
             "values": [
@@ -358,7 +384,8 @@
       {
         "title": {
           "en": "Screen !{{is off|is on}}",
-          "nl": "scherm staat  !{{aan|uit}}"
+          "de": "Bildschirm !{{ist aus|ist an}}",
+          "nl": "Scherm staat !{{aan|uit}}"
         },
         "args": [
           {
@@ -374,10 +401,12 @@
       {
         "title": {
           "en": "Start app",
+          "de": "Starte eine App",
           "nl": "App starten"
         },
         "titleFormatted": {
           "en": "Start app [[app]]",
+          "de": "Starte App [[app]]",
           "nl": "App [[app]] starten"
         },
         "args": [
@@ -390,11 +419,13 @@
             "type": "autocomplete",
             "name": "app",
             "title": {
-              "en": "app",
-              "nl": "app"
+              "en": "App",
+              "de": "App",
+              "nl": "App"
             },
             "placeholder": {
               "en": "Select an app",
+              "de": "Wähle eine App",
               "nl": "Selecteer een app"
             }
           }
@@ -404,10 +435,12 @@
       {
         "title": {
           "en": "Set audio output",
+          "de": "Wähle Audio-Ausgang",
           "nl": "Stel de audio-uitvoer in"
         },
         "titleFormatted": {
           "en": "Set audio output to [[output]]",
+          "de": "Wähle Audio-Ausgang [[output]]",
           "nl": "Stel de audio-uitvoer [[output]] in op"
         },
         "args": [
@@ -424,6 +457,7 @@
                 "id": "speaker",
                 "title": {
                   "en": "Speaker",
+                  "de": "Lautsprecher",
                   "nl": "Spreker"
                 }
               },
@@ -431,6 +465,7 @@
                 "id": "audioSystem",
                 "title": {
                   "en": "Audio system",
+                  "de": "Ausio-System",
                   "nl": "Audio systeem"
                 }
               },
@@ -438,6 +473,7 @@
                 "id": "hdmi",
                 "title": {
                   "en": "HDMI",
+                  "de": "HDMI",
                   "nl": "HDMI"
                 }
               },
@@ -445,6 +481,7 @@
                 "id": "speaker_hdmi",
                 "title": {
                   "en": "Speaker and HDMI",
+                  "de": "Lautsprecher und HDMI",
                   "nl": "Spreker and HDMI"
                 }
               }
@@ -457,10 +494,12 @@
         "deprecated": true,
         "title": {
           "en": "Send Enter command",
+          "de": "Sende Enter-Kommando",
           "nl": "Enter commando versturen"
         },
         "titleFormatted": {
           "en": "Send Enter command",
+          "de": "Sende Enter-Kommando",
           "nl": "Enter commando versturen"
         },
         "args": [
@@ -476,6 +515,7 @@
         "deprecated": true,
         "title": {
           "en": "Open Electronic Program Guide",
+          "de": "Öffne den elektronischen Programmführer",
           "nl": "Elektronische Programma Gids openen"
         },
         "args": [
@@ -490,10 +530,12 @@
       {
         "title": {
           "en": "Select input",
+          "de": "Wähle Eingang",
           "nl": "Selecteer invoer"
         },
         "titleFormatted": {
           "en": "Select input [[input]]",
+          "de": "Wähle den Eingang [[input]]",
           "nl": "Selecteer invoer [[input]]"
         },
         "args": [
@@ -507,10 +549,12 @@
             "name": "input",
             "title": {
               "en": "Input",
+              "de": "Eingang",
               "nl": "Invoer"
             },
             "placeholder": {
               "en": "Select an input",
+              "de": "Wähle einen Eingang",
               "nl": "Selecteer een invoer"
             }
           }
@@ -520,10 +564,12 @@
       {
         "title": {
           "en": "Send remote control command",
+          "de": "Sende Remote-Control-Kommande",
           "nl": "Stuur commando afstandsbediening"
         },
         "titleFormatted": {
           "en": "Send remote control command [[ircc]]",
+          "de": "Sende das Remote-Control-Kommando [[ircc]]",
           "nl": "Stuur commando afstandsbediening [[ircc]]"
         },
         "args": [
@@ -537,10 +583,12 @@
             "name": "ircc",
             "title": {
               "en": "RC command",
+              "de": "RC-Kommando",
               "nl": "RC-commando"
             },
             "placeholder": {
               "en": "Select an RC command",
+              "de": "Wähle ein RC-Kommando",
               "nl": "Selecteer een RC-commando"
             }
           }
@@ -551,10 +599,12 @@
         "deprecated": true,
         "title": {
           "en": "Start Netflix",
+          "de": "Starte Netflix",
           "nl": "Open Netflix"
         },
         "titleFormatted": {
           "en": "Start Netflix",
+          "de": "Starte Netflix",
           "nl": "Open Netflix"
         },
         "args": [
@@ -570,10 +620,12 @@
         "deprecated": true,
         "title": {
           "en": "Open Options",
+          "de": "Öffne Einstellungen",
           "nl": "Opties openen"
         },
         "titleFormatted": {
           "en": "Open Options",
+          "de": "Öffne Einstellungen",
           "nl": "Opties openen"
         },
         "args": [
@@ -588,10 +640,12 @@
       {
         "title": {
           "en": "Turn screen on.",
+          "de": "Schalte Bildschirm an.",
           "nl": "Schakel het scherm in."
         },
         "titleFormatted": {
           "en": "Turn screen on.",
+          "de": "Schalte Bildschirm an",
           "nl": "Schakel het scherm in."
         },
         "args": [
@@ -606,10 +660,12 @@
       {
         "title": {
           "en": "Turn screen off.",
+          "de": "Schalte Bildschirm aus",
           "nl": "Schakel het scherm uit."
         },
         "titleFormatted": {
           "en": "Turn screen off.",
+          "de": "Schalte Bildschirm aus",
           "nl": "Schakel het scherm uit."
         },
         "args": [
@@ -625,10 +681,12 @@
         "deprecated": true,
         "title": {
           "en": "Set HDMI input",
+          "de": "Wähle HDMI-Eingang",
           "nl": "Selecteer HDMI ingang"
         },
         "titleFormatted": {
           "en": "Set HDMI input to [[Input]]",
+          "de": "Wähle den HDMI-Eingang [[Input]]",
           "nl": "Selecteer HDMI ingang naar [[Input]]"
         },
         "args": [
@@ -768,10 +826,12 @@
       {
         "title": {
           "en": "Select TV channel",
+          "de": "Wähle TV-Kanal",
           "nl": "Selecteer TV-zender"
         },
         "titleFormatted": {
           "en": "Select TV source [[source]] and channel [[channel]]",
+          "de": "Wähle TV-Quelle [[source]] und Kanal [[channel]]",
           "nl": "Selecteer TV-zbron [[source]] en ender [[channel]]"
         },
         "args": [
@@ -785,10 +845,12 @@
             "name": "source",
             "title": {
               "en": "TV source",
+              "de": "TV-Quelle",
               "nl": "TV-bron"
             },
             "placeholder": {
               "en": "Select a TV source",
+              "de": "Wähle eine TV-Quelle",
               "nl": "Selecteer een TV-bron"
             }
           },
@@ -797,10 +859,12 @@
             "name": "channel",
             "title": {
               "en": "TV channel",
+              "de": "TV-Kanal",
               "nl": "TV-source"
             },
             "placeholder": {
               "en": "Select a TV channel",
+              "de": "Wähle einen TV-Kanal",
               "nl": "Selecteer een TV-zender"
             }
           }
@@ -893,6 +957,7 @@
           "type": "group",
           "label": {
             "en": "General settings",
+            "de": "Allgemeine Einstellungen",
             "nl": "Algemene instellingen"
           },
           "children": [
@@ -901,6 +966,7 @@
               "type": "text",
               "label": {
                 "en": "IP address",
+                "de": "IP-Adresse",
                 "nl": "IP adres"
               },
               "value": "0.0.0.0"
@@ -910,6 +976,7 @@
               "type": "password",
               "label": {
                 "en": "Pre-shared key",
+                "de": "Vorinstallierter Schlüssel",
                 "nl": "Pre-shared key"
               },
               "value": ""
@@ -918,13 +985,15 @@
               "id": "polling",
               "type": "number",
               "label": {
-                "en": "Device polling interval in minutes/seconds",
-                "nl": "Apparaat polling interval in minuten/seconden"
+                "en": "Device polling interval",
+                "de": "Abruf-Intervall",
+                "nl": "Apparaat polling interval"
               },
               "value": 1,
               "min": 1,
               "hint": {
                 "en": "Lowering this value improves automation responses when regular remote is used, but also increases load on your Homey.",
+                "de": "Das Verringern dieses Werts verbessert die Reaktionen bei Verwendung einer normalen Fernbedienung, erhöht aber auch die Auslastung deines Homeys.",
                 "nl": "Een lagere waarde zorgt voor een snellere terugkoppeling van de televisie wanneer de afstandbediening wordt gebruikt, maar is zwaarder voor de Homey om te verwerken."
               }
             },
@@ -933,7 +1002,8 @@
               "type": "dropdown",
               "label": {
                 "en": "Interval unit",
-                "de": "Interval eenheid"
+                "de": "Intervall-Einheit",
+                "nl": "Interval eenheid"
               },
               "value": "min",
               "values": [
@@ -941,14 +1011,16 @@
                   "id": "min",
                   "label": {
                     "en": "Minutes",
-                    "de": "Minuten"
+                    "de": "Minuten",
+                    "nl": "Minuten"
                   }
                 },
                 {
                   "id": "sec",
                   "label": {
                     "en": "Seconds",
-                    "de": "Sekunden"
+                    "de": "Sekunden",
+                    "nl": "Sekunden"
                   }
                 }
               ]
@@ -959,11 +1031,13 @@
               "value": false,
               "label": {
                 "en": "Different polling when TV is switched off",
+                "de": "Abruf-Intervall für ausgeschalteten TV",
                 "nl": "Verschillende polling als de tv uit staat"
               },
               "hint": {
-                "en": "You can set a differnent polling interval when the TV is off.",
-                "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld."
+                "en": "You can set a differnent polling interval when the TV is off to allow TV to go into deep sleep.",
+                "de": "Es kann ein abweichendes Abruf-Intervall für einen ausgeschalteten TV angegeben werden, um den Wechsel in den Tiefschlaf zu erlauben.",
+                "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld om de tv in diepe slaap te laten gaan."
               }
             },
             {
@@ -971,13 +1045,15 @@
               "type": "number",
               "label": {
                 "en": "Polling interval in minutes when TV is off",
+                "de": "Abruf-Intervall in Minuten für augeschalteten TV",
                 "nl": "Polling-interval in minuten wanneer de tv is uitgeschakeld"
               },
               "value": 5,
               "min": 1,
               "hint": {
-                "en": "You can set a differnent polling interval when the TV is off. Use interval >2min to allow the TV go to deep sleep if 'Powered on by apps' is noc activated.",
-                "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld. Gebruik interval >2 min om de tv in diepe slaapstand te laten gaan als 'Powered on by apps' niet is geactiveerd."
+                "en": "You can set a differnent polling interval when the TV is off. Use interval >2min to allow the TV go to deep sleep if 'network standby' is noc activated.",
+                "de": "Es kann ein abweichendes Abruf-Intervall verwendet werden, wenn das Fernsehgerät ausgeschaltet ist. Verwende ein Intervall >2 Minuten, damit das Fernsehgerät in den Tiefschlaf gehen kann, wenn 'Netzwerk-Standby' nicht aktiviert ist.",
+                "nl": "U kunt een ander navraaginterval instellen wanneer de tv is uitgeschakeld. Gebruik interval >2 min om de tv in diepe slaapstand te laten gaan als 'netwerk stand-by' niet is geactiveerd."
               }
             },
             {
@@ -985,6 +1061,7 @@
               "type": "text",
               "label": {
                 "en": "MAC address",
+                "de": "MAC-Adresse",
                 "nl": "MAC adres"
               },
               "value": "00:00:00:00:00:00"
@@ -999,6 +1076,7 @@
       "type": "enum",
       "title": {
         "en": "Audio output",
+        "de": "Audio-Ausgang",
         "nl": "Audio uitgang"
       },
       "getable": true,
@@ -1009,6 +1087,7 @@
           "id": "speaker",
           "title": {
             "en": "Speaker",
+            "de": "Lautsprecher",
             "nl": "Spreker"
           }
         },
@@ -1016,6 +1095,7 @@
           "id": "audioSystem",
           "title": {
             "en": "Audio system",
+            "de": "Audio-System",
             "nl": "Audio systeem"
           }
         },
@@ -1023,6 +1103,7 @@
           "id": "hdmi",
           "title": {
             "en": "HDMI",
+            "de": "HDMI",
             "nl": "HDMI"
           }
         },
@@ -1030,6 +1111,7 @@
           "id": "speaker_hdmi",
           "title": {
             "en": "Speaker and HDMI",
+            "de": "Lautsprecher und HDMI",
             "nl": "Spreker and HDMI"
           }
         }
@@ -1039,6 +1121,7 @@
       "type": "enum",
       "title": {
         "en": "Input",
+        "de": "Eingang",
         "nl": "Invoer"
       },
       "getable": true,
@@ -1095,6 +1178,7 @@
       "type": "string",
       "title": {
         "en": "Playing content",
+        "de": "Angezeigter Inhalt",
         "nl": "Inhoud afspelen"
       },
       "getable": true,
@@ -1104,6 +1188,7 @@
     "screen_off": {
       "title": {
         "en": "Screen off",
+        "de": "Bildschirm aus",
         "nl": "Scherm uit"
       },
       "type": "boolean",

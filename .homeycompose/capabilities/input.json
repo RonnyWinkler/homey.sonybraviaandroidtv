@@ -2,6 +2,7 @@
   "type": "enum",
   "title": {
     "en": "Input",
+    "de": "Eingang",
     "nl": "Invoer"
   },
   "getable": true,

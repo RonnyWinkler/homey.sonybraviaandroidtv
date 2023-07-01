@@ -1,10 +1,12 @@
 {
     "title": { 
         "en": "Select TV channel",
+        "de": "Wähle TV-Kanal",
         "nl": "Selecteer TV-zender"
     },
     "titleFormatted": { 
         "en": "Select TV source [[source]] and channel [[channel]]",
+        "de": "Wähle TV-Quelle [[source]] und Kanal [[channel]]",
         "nl": "Selecteer TV-zbron [[source]] en ender [[channel]]"
     },
     "args": [
@@ -18,10 +20,12 @@
             "name": "source",
             "title": { 
                 "en": "TV source",
+                "de": "TV-Quelle",
                 "nl": "TV-bron"
             },
             "placeholder": { 
                 "en": "Select a TV source",
+                "de": "Wähle eine TV-Quelle",
                 "nl": "Selecteer een TV-bron"
             }
         },
@@ -30,10 +34,12 @@
             "name": "channel",
             "title": { 
                 "en": "TV channel",
+                "de": "TV-Kanal",
                 "nl": "TV-source"
             },
             "placeholder": { 
                 "en": "Select a TV channel",
+                "de": "Wähle einen TV-Kanal",
                 "nl": "Selecteer een TV-zender"
             }
         }

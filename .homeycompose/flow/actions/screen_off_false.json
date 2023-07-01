@@ -1,10 +1,12 @@
 {
     "title": {
         "en": "Turn screen on.",
+        "de": "Schalte Bildschirm an.",
         "nl": "Schakel het scherm in."
     },
     "titleFormatted": {
         "en": "Turn screen on.",
+        "de": "Schalte Bildschirm an",
         "nl": "Schakel het scherm in."
     },
     "args": [

@@ -1,0 +1,71 @@
+{
+  "errors": {
+    "authentication": "Anmeldung fehlgeschlagen, prüfe den vorinstallierten Schlüssel des TV.",
+    "unkown": "Ein Fehler ist aufgetreten, Prüfe die TV-Einstellungen.",
+    "connection": "Verbindung konnte nicht hergestellt werden.",
+    "preshared_key": "Vorinstallierter Schlüssel ist ungültig, prüfe TV-Einstellungen.",
+    "previous_view": "Vorheriger Dialog konnte nicht geladen werden."
+  },
+  "not_found": {
+    "title": "Keine Sony BRAVIA Android TVs gefunden",
+    "intro": "<i>Es wurden keine Sony BRAVIA Android TVs gefudnden. Stelle sicher, dass der <b>TV angeschaltet</b> ist und versuche es erneut. Der TV kann auch manuell durch Eingane der IP-Adresse hinzufügt werden.</i>",
+    "buttons": {
+      "manual_input": "Manuelle Eingabe",
+      "instructions": "Anleitung anzeigen"
+    }
+  },
+  "manual_input": {
+    "title": "Sony BRAVIA Android TV manuell hinzufügen",
+    "intro": "<i>Das manuelle Hinzufügen des TVs erlaubt das Fortsetzen des Prozesses für erfahrene Benutzer, wenn die automatische Erkennung nicht möglich ist.</i>",
+    "inputs": {
+      "name": {
+        "label": "Name (optional):",
+        "placeholder": "Name"
+      },
+      "ip_address": {
+        "label": "IP-Adresse:",
+        "placeholder": "IP-Adresse"
+      },
+      "mac_address": {
+        "label": "MAC-Adresse (optional):",
+        "placeholder": "MAC-Adresse"
+      }
+    },
+    "buttons": {
+      "next": "Weiter"
+    }
+  },
+  "preshared_key": {
+    "titles": {
+      "with_device": "PSK einrichten für __device__",
+      "no_device": "PSK einrichten"
+    },
+    "intro": "<i>Der vorinstallierte Schlüssel wird zur Authentifizierung am Sony BRAVIA Android TV über das lokale Netzwerk verwendet. Der Schlüssel muss eingerichtet werden, bevor mit dem Hinzufügen des Fernsehers fortgefahren werden kann. Wähle Für weitere Hilfe die Schaltfläche <b>Anleitung anzeigen</b>.</i>",
+    "inputs": {
+      "preshared_key": {
+        "label": "Vorinstallierter Schlüssel:",
+        "placeholder": "Vorinstallierter Schlüssel"
+      }
+    },
+    "buttons": {
+      "done": "Fertig",
+      "instructions": "Anleitung anzeigen"
+    }
+  },
+  "instructions": {
+    "titles": {
+      "header": "Einrichten des Sony BRAVIA Android TV",
+      "page": "Das Einrichten ist wirklich einfach"
+    },
+    "intro": "<i>Befolge einfach die Anweisungen im Video. Es wird Remote-Geräten ermöglicht, den Sony BRAVIA Android TV zu starten und eine Authentifizierung über einen vorinstallierten Schlüssel einzurichten.</i>",
+    "video_caption": "Klicke das Video, um es in YouTube anzuzeigen",
+    "step_by_step": {
+      "intro": "Alle Einstellungen, die angepasst werden müssen, sind in <b>Netzwerk</b>-Einstellungen des Fernsehers zu finden. In diesen Netzwerkeinstellungen müssen müssen folgende Einstellungen vorgenommen werden:",
+      "steps": "<li>Fernstart: <b>aktiviert</b></li><li>Heimnetzwerk-Einstellungen<ul><li>Authentifizierung: <b>Normal and vorinstallierter Schlüssel</b></li><li>Vorinstallierter Schlüssel: <b>beliebiger Wert</b></li></ul></li>",
+      "outro": "Anschließend kann die Einrichtung des Sony BRAVIA Android TV fortgesetzt werden. Zu einem späteren Zeitpunkt wird die Eingabe des vorinstallierten Schlüssels gefordert."
+    },
+    "buttons": {
+      "continue": "Fortsetzen"
+    }
+  }
+}
