@@ -62,5 +62,9 @@
   "2.0.13": {
     "en": "Extended german translation and corrected descriptions.",
     "de": "Deutsche Übersetzung ergänzt und Beschreibungen korrigiert."
+  },
+  "2.0.14": {
+    "en": "Added error logging.",
+    "de": "Fehlerprotokollierung ergänzt."
   }
 }

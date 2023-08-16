@@ -198,7 +198,13 @@ class SonyBraviaAndroidTvApp extends Homey.App {
         //         return args.device.wakeOnLan();
         // });
         this._flowActionWakeOnLan.registerRunListener(async (args, state) => {
-                return await this._wakeOnLanAction(args, state);
+          try{
+            return await this._wakeOnLanAction(args, state);
+          }
+          catch(error){
+            this.error("Error executing flowAction 'wake_on_lan': "+  error.message);
+            throw new Error(error.message);
+          }
         });
         this._flowActionWakeOnLan.registerArgumentAutocompleteListener('device', async (query, args) => {
           let results = [];
