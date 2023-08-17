@@ -286,13 +286,23 @@ class SonyBraviaAndroidTvApp extends Homey.App {
     async checkDeviceAvailability(device){
       for (let i=1; i<=10; i++){
         this.log("Check device availability #", (i));
-        await device.checkDevice();
-        if (device.getAvailable()){
+        // await device.checkDevice();
+        // if (device.getAvailable()){
+        //   this.log("Device is available.");
+        //   return true;
+        // }
+        // if (i<10){
+        //   await this.sleep(2000);
+        // }
+
+        if( await device._checkDeviceAvailability() ){
           this.log("Device is available.");
           return true;
         }
-        if (i<10){
-          await this.sleep(2000);
+        else{
+          if (i<10){
+            await this.sleep(2000);
+          }
         }
       }
       this.log("WoL sent, but device is still unavailable.");

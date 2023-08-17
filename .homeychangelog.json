@@ -66,5 +66,9 @@
   "2.0.14": {
     "en": "Added error logging.",
     "de": "Fehlerprotokollierung ergänzt."
+  },
+  "2.0.15": {
+    "en": "Added error logging.",
+    "de": "Fehlerprotokollierung ergänzt."
   }
 }

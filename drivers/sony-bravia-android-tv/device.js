@@ -149,8 +149,7 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
 
   async checkDevice() {
     // this.log("Check device state...");
-    await this._checkDeviceAvailability();
-    if (this.getAvailable()){
+    if (await this._checkDeviceAvailability()){
       await this._checkDevicePowerState();
       await this._checkDeviceVolume();
       await this._checkPlayingContent();
@@ -161,13 +160,16 @@ class SonyBraviaAndroidTvDevice extends Homey.Device {
 
   async _checkDeviceAvailability() {
     // Don't set device unavailable. Keep it available but off to turn ov with wWoL
-    
-    // try {
-    //   await SonyBraviaAndroidTvCommunicator.getDevicePowerState(this);
-    //   return this.setAvailable();
-    // } catch (err) {
-    //   return this.setUnavailable();
-    // }
+    try {
+      await SonyBraviaAndroidTvCommunicator.getDevicePowerState(this);
+      // this.log("Check device availability: TRUE");
+      return true;
+      // return this.setAvailable();
+    } catch (err) {
+      // this.log("Check device availability: FALSE");
+      // return this.setUnavailable();
+      return false;
+    }
   }
 
   async _checkDevicePowerState() {
