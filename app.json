@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "name.ricardoismy.sonybraviaandroidtv",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "compatibility": ">=8.1.0",
   "sdk": 3,
   "name": {
@@ -925,6 +925,19 @@
       ],
       "pair": [
         {
+          "id": "discover",
+          "template": "loading",
+          "options": {
+            "text": {
+              "en": "Searching for devices...",
+              "de": "Suche nach Geräte..."
+            }
+          },
+          "navigation": {
+            "next": "not_found"
+          }
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "options": {
@@ -941,7 +954,10 @@
           "id": "instructions"
         },
         {
-          "id": "not_found"
+          "id": "not_found",
+          "navigation": {
+            "next": "discover"
+          }
         },
         {
           "id": "manual_input"

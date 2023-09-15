@@ -22,6 +22,19 @@
   ],
   "pair": [
     {
+      "id": "discover",
+      "template": "loading",
+      "options": {
+          "text": {
+            "en": "Searching for devices...",
+            "de": "Suche nach Geräte..."
+          }
+      },
+      "navigation": {
+          "next": "not_found"
+      }
+    },
+    {
       "id": "list_devices",
       "template": "list_devices",
       "options": {
@@ -38,7 +51,10 @@
       "id": "instructions"
     },
     {
-      "id": "not_found"
+      "id": "not_found",
+      "navigation": {
+        "next": "discover"
+      }
     },
     {
       "id": "manual_input"

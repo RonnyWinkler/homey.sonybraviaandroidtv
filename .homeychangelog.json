@@ -70,5 +70,9 @@
   "2.0.15": {
     "en": "Added error logging.",
     "de": "Fehlerprotokollierung ergänzt."
+  },
+  "2.0.16": {
+    "en": "Changed pair view (discovery).",
+    "de": "Pair-Dialog angepasst (Suche)."
   }
 }

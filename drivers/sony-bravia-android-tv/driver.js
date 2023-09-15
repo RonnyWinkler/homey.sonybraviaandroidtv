@@ -7,7 +7,16 @@ class SonyBraviaAndroidTvDriver extends Homey.Driver {
   }
 
   onPair(session) {
-    session.setHandler('list_devices', async () => await this.fetchAvailableDevices(session));
+    let devices = [];
+    session.setHandler('showView', async (view) => {
+      if (view === 'discover') {
+        this.log("showView:discover" );
+        devices = await this.fetchAvailableDevices(session);
+        await session.showView('list_devices');
+      }
+    });
+    // session.setHandler('list_devices', async () => await this.fetchAvailableDevices(session));
+    session.setHandler('list_devices', async () => { return devices; });
     session.setHandler('manual_input', async (data) => await this.fetchDeviceDetails(data));
     session.setHandler('preshared_key', async (device) => await this.fetchExpandedDeviceDetails(device));
   }
@@ -52,8 +61,8 @@ class SonyBraviaAndroidTvDriver extends Homey.Driver {
   }
 
   async fetchAvailableDevices(session) {
-    let foundDevices = await this._sonyBraviaAndroidTvFinder.discoverDevices();
     let devices = [];
+    let foundDevices = await this._sonyBraviaAndroidTvFinder.discoverDevices();
 
     this.log('Found Sony BRAVIA Android TV\'s: ', foundDevices);
 
