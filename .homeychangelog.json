@@ -74,5 +74,9 @@
   "2.0.16": {
     "en": "Changed pair view (discovery).",
     "de": "Pair-Dialog angepasst (Suche)."
+  },
+  "2.0.17": {
+    "en": "Reduced discovery time to 8 sec to prevent timeouts in WebApp.",
+    "de": "Reduziere Suchzeit auf 8 sec, um Timeouts in WebApp zu vermeiden."
   }
 }
