@@ -78,5 +78,9 @@
   "2.0.17": {
     "en": "Reduced discovery time to 8 sec to prevent timeouts in WebApp.",
     "de": "Reduziere Suchzeit auf 8 sec, um Timeouts in WebApp zu vermeiden."
+  },
+  "2.0.18": {
+    "en": "Error handling in device discovery.",
+    "de": "Fehlerbehandlung in Geräte-Suche."
   }
 }
